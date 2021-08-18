@@ -1,6 +1,6 @@
 # benswapbch-contracts
 
-<h3>Compiler:</h3>
+<h3>Solidity Compiler:</h3>
 (LP Factory): v0.5.16+commit.9c3226ce<br/>
 (AMM Router): v0.6.6+commit.6c089d02   (optimization enabled with 200 runs)<br/>
 (Multicall): v0.6.10+commit.00c0fcaf   (optimization enabled with 999999 runs)<br/>
