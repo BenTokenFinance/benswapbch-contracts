@@ -973,9 +973,9 @@ contract GreenBen is BEP20('Green Ben', 'EBEN') {
         );
 
         address signatory = ecrecover(digest, v, r, s);
-        require(signatory != address(0), "GBEN::delegateBySig: invalid signature");
-        require(nonce == nonces[signatory]++, "GBEN::delegateBySig: invalid nonce");
-        require(now <= expiry, "GBEN::delegateBySig: signature expired");
+        require(signatory != address(0), "EBEN::delegateBySig: invalid signature");
+        require(nonce == nonces[signatory]++, "EBEN::delegateBySig: invalid nonce");
+        require(now <= expiry, "EBEN::delegateBySig: signature expired");
         return _delegate(signatory, delegatee);
     }
 
@@ -1005,7 +1005,7 @@ contract GreenBen is BEP20('Green Ben', 'EBEN') {
         view
         returns (uint256)
     {
-        require(blockNumber < block.number, "GBEN::getPriorVotes: not yet determined");
+        require(blockNumber < block.number, "EBEN::getPriorVotes: not yet determined");
 
         uint32 nCheckpoints = numCheckpoints[account];
         if (nCheckpoints == 0) {
@@ -1042,7 +1042,7 @@ contract GreenBen is BEP20('Green Ben', 'EBEN') {
         internal
     {
         address currentDelegate = _delegates[delegator];
-        uint256 delegatorBalance = balanceOf(delegator); // balance of underlying GBENs (not scaled);
+        uint256 delegatorBalance = balanceOf(delegator); // balance of underlying EBENs (not scaled);
         _delegates[delegator] = delegatee;
 
         emit DelegateChanged(delegator, currentDelegate, delegatee);
@@ -1078,7 +1078,7 @@ contract GreenBen is BEP20('Green Ben', 'EBEN') {
     )
         internal
     {
-        uint32 blockNumber = safe32(block.number, "GBEN::_writeCheckpoint: block number exceeds 32 bits");
+        uint32 blockNumber = safe32(block.number, "EBEN::_writeCheckpoint: block number exceeds 32 bits");
 
         if (nCheckpoints > 0 && checkpoints[delegatee][nCheckpoints - 1].fromBlock == blockNumber) {
             checkpoints[delegatee][nCheckpoints - 1].votes = newVotes;
