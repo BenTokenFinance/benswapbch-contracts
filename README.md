@@ -9,6 +9,7 @@
 (Green Ben Faucet): v0.6.12+commit.27d51765 <br/>
 (MasterBreeder): v0.6.12+commit.27d51765 <br/>
 (Timelock): v0.6.12+commit.27d51765 <br/>
+(Preseller): v0.6.12+commit.27d51765 <br/>
 <br/>
 <h3>Deployed Contracts on SmartBCH Mainnet:</h3>
 LP Factory: 0x8d973bAD782c1FFfd8FcC9d7579542BA7Dd0998D<br/>

@@ -1261,7 +1261,7 @@ contract MasterBreeder is Ownable {
     // Add a new lp to the pool. Can only be called by the owner.
     // XXX DO NOT add the same LP token more than once. Rewards will be messed up if you do.
     function add(uint256 _allocPoint, IBEP20 _lpToken, uint16 _depositFeeBP, bool _withUpdate) public onlyOwner {
-        require(_depositFeeBP <= 10000, "add: invalid deposit fee basis points");
+        require(_depositFeeBP <= 1000, "add: invalid deposit fee basis points");
         if (_withUpdate) {
             massUpdatePools();
         }
@@ -1278,7 +1278,7 @@ contract MasterBreeder is Ownable {
 
     // Update the given pool's EBEN allocation point and deposit fee. Can only be called by the owner.
     function set(uint256 _pid, uint256 _allocPoint, uint16 _depositFeeBP, bool _withUpdate) public onlyOwner {
-        require(_depositFeeBP <= 10000, "set: invalid deposit fee basis points");
+        require(_depositFeeBP <= 1000, "set: invalid deposit fee basis points");
         if (_withUpdate) {
             massUpdatePools();
         }
@@ -1420,5 +1420,9 @@ contract MasterBreeder is Ownable {
         require(block.number < newStartBlock, "updateStartBlock: cannot update startBlock to a block in the past.");
 
         startBlock = newStartBlock;
+        uint256 length = poolInfo.length;
+        for (uint256 pid = 0; pid < length; ++pid) {
+            poolInfo[pid].lastRewardBlock = newStartBlock;
+        }
     }
 }
