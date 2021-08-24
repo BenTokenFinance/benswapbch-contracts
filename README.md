@@ -18,6 +18,7 @@ Multicall: 0x1b38EBAd553f218e2962Cb1C0539Abb5d6A37774<br/>
 Wrapped BCH: 0x3743eC0673453E5009310C727Ba4eaF7b3a1cc04 <br/>
 Green Ben: 0x77CB87b57F54667978Eb1B199b28a0db8C8E1c0B <br/>
 MasterBreeder: 0xDEa721EFe7cBC0fCAb7C8d65c598b21B6373A2b6 <br/>
+Preseller: 0x7190D576214deEb04b5E6DdCf11E8b1Bfc396791 <br/>
 <br/>
 <h3>Deployed Contracts on SmartBCH Amber Testnet:</h3>
 LP Factory: 0x769e1fdbA5d0e397F34fD9d9B49F3d83F543DD02<br/>
