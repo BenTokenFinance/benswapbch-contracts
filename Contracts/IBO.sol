@@ -660,24 +660,29 @@ contract IBO {
 }
 
 contract IBOFactory {
+    using SafeMath for uint256;
     using SafeBEP20 for IBEP20;
 
     IBEP20 public feeToken;
     address public feeTo;
     uint256 public creationFee;
     address public adminAddress;
+    uint256 public sponsorshipMultiplier;
 
     mapping(address => uint256) public getFeeRate;
     mapping(address => address[]) public getIBOs;
     mapping(address => address) public getCreator;
+    mapping(address => uint256) public getSponsorship;
 
     event IBOCreated(address indexed raisingToken, address indexed offeringToken, address indexed creator, address ibo);
+    event addSponsorship(address indexed ibo, address indexed sponsor, uint256 amount, uint256 multiplier);
 
     constructor(address _admin, IBEP20 _feeToken, address _feeTo, uint256 _creationFee) public {
         adminAddress = _admin;
         feeToken = _feeToken;
         feeTo = _feeTo;
         creationFee = _creationFee;
+        sponsorshipMultiplier = 10000;
     }
 
     function setAdminTo(address _To) external {
@@ -705,6 +710,11 @@ contract IBOFactory {
         feeTo = _feeTo;
     }
 
+    function setSponsorshipMultiplier(address _sponsorshipMultiplier) external {
+        require(msg.sender == adminAddress, 'BenSwap: FORBIDDEN');
+        sponsorshipMultiplier = _sponsorshipMultiplier;
+    }
+
     function getIBOCount(address _add) external view returns (uint256) {
         return getIBOs[_add].length;
     }
@@ -727,5 +737,12 @@ contract IBOFactory {
         getCreator[ibo] = address(msg.sender);
 
         emit IBOCreated(raisingToken, offeringToken, msg.sender, ibo);
+    }
+
+    function addSponsorship(address ibo, uint256 amount) {
+        feeToken.safeTransferFrom(address(msg.sender), feeTo, amount);
+        getSponsorship[ibo] += amount.mul(sponsorshipMultiplier);
+
+        emit addSponsorship(ibo, msg.sender, amount, sponsorshipMultiplier);
     }
 }
