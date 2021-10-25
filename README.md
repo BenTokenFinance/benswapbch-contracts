@@ -11,6 +11,8 @@
 (Timelock): v0.6.12+commit.27d51765 <br/>
 (Preseller): v0.6.12+commit.27d51765 <br/>
 (IBO Factory): v0.6.12+commit.27d51765 <br/>
+(Lottery Ticket): v0.6.12+commit.27d51765 <br/>
+(Lottery): v0.6.12+commit.27d51765   (optimization enabled with 200 runs)<br/>
 <br/>
 <h3>Deployed Contracts on SmartBCH Mainnet:</h3>
 LP Factory: 0x8d973bAD782c1FFfd8FcC9d7579542BA7Dd0998D<br/>
@@ -22,6 +24,8 @@ MasterBreeder: 0xDEa721EFe7cBC0fCAb7C8d65c598b21B6373A2b6 <br/>
 Preseller: 0x7190D576214deEb04b5E6DdCf11E8b1Bfc396791 <br/>
 Timelock: 0x422D79D23986468166DBa045d73B6292FdAa0a47 <br/>
 IBO Factory: 0x9FE4b647609F77B5e23Cdbe85ea89064125386eE <br/>
+Lottery Ticket: 0xFc82061Fe93C1DeF8D6dD5D6865B383C543a1315 <br/>
+Lottery: 0xd24d70B77db78bF8Bb7017a94be575Fb172C6C15 <br/>
 <br/>
 <h3>Deployed Contracts on SmartBCH Amber Testnet:</h3>
 LP Factory: 0x769e1fdbA5d0e397F34fD9d9B49F3d83F543DD02<br/>
