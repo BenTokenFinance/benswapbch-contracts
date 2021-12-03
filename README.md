@@ -14,6 +14,7 @@
 (Lottery Ticket): v0.6.12+commit.27d51765 <br/>
 (Lottery): v0.6.12+commit.27d51765   (optimization enabled with 200 runs)<br/>
 (BenSwapLPValidator): v0.6.12+commit.27d51765 <br/>
+(BenLock Factory): v0.6.12+commit.27d51765 <br/>
 <br/>
 <h3>Deployed Contracts on SmartBCH Mainnet:</h3>
 LP Factory: 0x8d973bAD782c1FFfd8FcC9d7579542BA7Dd0998D<br/>
@@ -28,6 +29,7 @@ IBO Factory: 0x9FE4b647609F77B5e23Cdbe85ea89064125386eE <br/>
 Lottery Ticket: 0xFc82061Fe93C1DeF8D6dD5D6865B383C543a1315 <br/>
 Lottery: 0xd24d70B77db78bF8Bb7017a94be575Fb172C6C15 <br/>
 BenSwapLPValidator: 0x7888872828c92e8cF0d7bbc04B52CFe6fDD4Ffdf <br/>
+BenLock Factory: 0x5507194a62c02Ac47eD6da5Ab178C3cf62d4CEF4 <br/>
 <br/>
 <h3>Deployed Contracts on SmartBCH Amber Testnet:</h3>
 LP Factory: 0x769e1fdbA5d0e397F34fD9d9B49F3d83F543DD02<br/>
