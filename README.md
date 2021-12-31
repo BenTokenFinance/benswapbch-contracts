@@ -15,8 +15,8 @@
 (Lottery): v0.6.12+commit.27d51765   (optimization enabled with 200 runs)<br/>
 (BenSwapLPValidator): v0.6.12+commit.27d51765 <br/>
 (BenLock Factory): v0.6.12+commit.27d51765 <br/>
-(SEP-20 Factory): : v0.6.12+commit.27d51765 <br/>
-(SEP-20 Token Temlate - Basic): : v0.6.12+commit.27d51765 <br/>
+(SEP-20 Factory): v0.6.12+commit.27d51765 <br/>
+(SEP-20 Token Temlate - Basic): v0.6.12+commit.27d51765 <br/>
 <br/>
 <h3>Deployed Contracts on SmartBCH Mainnet:</h3>
 LP Factory: 0x8d973bAD782c1FFfd8FcC9d7579542BA7Dd0998D<br/>
