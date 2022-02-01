@@ -17,6 +17,7 @@
 (BenLock Factory): v0.6.12+commit.27d51765 <br/>
 (SEP-20 Factory): v0.6.12+commit.27d51765 <br/>
 (SEP-20 Token Template - Basic): v0.6.12+commit.27d51765 <br/>
+(SEP-20 Token Template - Liquidity Generator): v0.8.4+commit.c7e474f2   (optimization enabled with 200 runs)<br/>
 (Ranch Factory): v0.6.12+commit.27d51765 <br/>
 <br/>
 <h3>Deployed Contracts on SmartBCH Mainnet:</h3>
@@ -35,6 +36,7 @@ BenSwapLPValidator: 0x7888872828c92e8cF0d7bbc04B52CFe6fDD4Ffdf <br/>
 BenLock Factory: 0x5507194a62c02Ac47eD6da5Ab178C3cf62d4CEF4 <br/>
 SEP-20 Factory: 0x73410fa5CE7401272055a45DCaff7170D343433a<br/>
 SEP-20 Token Template - Basic: 0xE8280F2cd8728DA467c8Ec101241ef39f0041d35<br/>
+SEP-20 Token Template - Liquidity Generator: 0x6a737C379DaE77Bb085cA0c2902360A74Bf982A2<br/>
 Ranch Factory: 0x15F252B98e9195089D12e283Cd8388b1687C6b8E<br/>
 <br/>
 <h3>Deployed Contracts on SmartBCH Amber Testnet:</h3>
