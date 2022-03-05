@@ -42,7 +42,7 @@ SEP-20 Factory: 0x73410fa5CE7401272055a45DCaff7170D343433a<br/>
 SEP-20 Token Template - Basic: 0xE8280F2cd8728DA467c8Ec101241ef39f0041d35<br/>
 SEP-20 Token Template - Liquidity Generator: 0x6a737C379DaE77Bb085cA0c2902360A74Bf982A2<br/>
 Ranch Factory: 0x15F252B98e9195089D12e283Cd8388b1687C6b8E<br/>
-IBO v2 Factory: 0x1cB774c0f00803a6E204DB39dA64384Faa4d9dB2<br/>
+IBO v2 Factory: 0x455D6EAD2bbB3553Be12A9528054A41136FeB731<br/>
 IBO v2 Conclusion Strategy - Simply Sending Offering Tokens: 0x322de556F8d2368E47753C67B73F00e954fE9b70<br/>
 IBO v2 Conclusion Strategy - Simply Sending Raising Tokens: 0x448b2DdA9928bFE3b4605C725Ee28b5f2Ef75792<br/>
 IBO v2 Conclusion Strategy - Time-Lock Raising Tokens: 0x3c71f8DBcf49F793f381787119E9E33B6eaa5DE6

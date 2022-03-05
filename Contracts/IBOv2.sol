@@ -617,6 +617,12 @@ contract IBOv2 {
     // admin address
     address public adminAddress;
 
+    // conditions
+    uint256 public minBlock;
+    uint256 public minTimestamp;
+    uint256 public minSold;
+    bool public conditionsSet;
+
     // concluders
     IIboV2Concluder public raisingTokenConcluder;
     IIboV2Concluder public offeringTokenConcluder;
@@ -655,12 +661,25 @@ contract IBOv2 {
         return status() == 0;
     }
 
+    function canConclude() public view returns(bool) {
+        return (block.number >= minBlock) && (block.timestamp >= minTimestamp) && (sold >= minSold);
+    }
+
     constructor() public {
         factory = msg.sender;
+
+        conditionsSet = false;
     }
 
     // called once by the factory
-    function initialize(address rasing, address offering, uint256 _price, address _adminAddress, address _raisingTokenConcluder, address _offeringTokenConcluder) external {
+    function initialize(
+        address rasing, 
+        address offering, 
+        uint256 _price, 
+        address _adminAddress, 
+        address _raisingTokenConcluder, 
+        address _offeringTokenConcluder
+    ) external {
         require(msg.sender == factory, 'BenSwap: FORBIDDEN'); // sufficient check
         require(_price > 0, 'Invalid price!');
         
@@ -675,6 +694,10 @@ contract IBOv2 {
         offeringTokenConcluder.addWhitelist(_raisingTokenConcluder);
 
         sold = 0;
+
+        minBlock = 0;
+        minTimestamp = 0;
+        minSold = 0;
     }
 
     function balance()
@@ -701,6 +724,7 @@ contract IBOv2 {
 
     function conclude() external {
         require(adminAddress == msg.sender, 'caller must be the admin!');
+        require(canConclude(), 'conditions not met!');
 
         if (offeringTokenConcluder.status() < 999) {
             offeringTokenConcluder.conclude();
@@ -709,6 +733,33 @@ contract IBOv2 {
         if (raisingTokenConcluder.status() < 999) {
             raisingTokenConcluder.conclude();
         }
+    }
+
+    function setMinBlock(uint256 _minBlock) external {
+        require(adminAddress == msg.sender, 'caller must be the admin!');
+        require(!conditionsSet, 'already set!');
+
+        minBlock = _minBlock;
+    }
+
+    function setMinTimestamp(uint256 _minTimestamp) external {
+        require(adminAddress == msg.sender, 'caller must be the admin!');
+        require(!conditionsSet, 'already set!');
+
+        minTimestamp = _minTimestamp;
+    }
+
+    function setMinSold(uint256 _minSold) external {
+        require(adminAddress == msg.sender, 'caller must be the admin!');
+        require(!conditionsSet, 'already set!');
+
+        minSold = _minSold;
+    }
+
+    function setConditionsInStone() external {
+        require(adminAddress == msg.sender, 'caller must be the admin!');
+
+        conditionsSet = true;
     }
 }
 
