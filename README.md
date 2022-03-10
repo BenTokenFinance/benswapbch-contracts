@@ -45,7 +45,8 @@ Ranch Factory: 0x15F252B98e9195089D12e283Cd8388b1687C6b8E<br/>
 IBO v2 Factory: 0x455D6EAD2bbB3553Be12A9528054A41136FeB731<br/>
 IBO v2 Conclusion Strategy - Simply Sending Offering Tokens: 0x322de556F8d2368E47753C67B73F00e954fE9b70<br/>
 IBO v2 Conclusion Strategy - Simply Sending Raising Tokens: 0x448b2DdA9928bFE3b4605C725Ee28b5f2Ef75792<br/>
-IBO v2 Conclusion Strategy - Time-Lock Raising Tokens: 0x3c71f8DBcf49F793f381787119E9E33B6eaa5DE6
+IBO v2 Conclusion Strategy - Time-Lock Raising Tokens: 0x3c71f8DBcf49F793f381787119E9E33B6eaa5DE6<br/>
+DAO Helper V1: 0x61EF60961230a9a84bc911fFc76302dCb435dB91<br/>
 <br/>
 <h3>Deployed Contracts on SmartBCH Amber Testnet:</h3>
 LP Factory: 0x769e1fdbA5d0e397F34fD9d9B49F3d83F543DD02<br/>
@@ -53,4 +54,4 @@ AMM Router: 0x221C2c57B0dAec7aF9A3B03c384c0C99e066b612<br/>
 Multicall: 0xd512aB1c3650dDb220C0E6Fa970Ff3AC640eFb7f<br/>
 Wrapped BCH: 0x17F4FCF5b6E0A95D4eE331c8529041896A073F9b<br/>
 Green Ben: 0x77beB0D017C743eCa0d22951A3b051A17D50f108<br/>
-Green Ben Faucet: 0x7A59a541884265E0038908ad7C16fc28e591f43A
+Green Ben Faucet: 0x7A59a541884265E0038908ad7C16fc28e591f43A<br/>
