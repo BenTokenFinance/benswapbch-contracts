@@ -24,6 +24,7 @@
 (IBO v2 Conclusion Strategy - Simply Sending Raising Tokens): v0.6.12+commit.27d51765 <br/>
 (IBO v2 Conclusion Strategy - Time-Lock Raising Tokens): v0.6.12+commit.27d51765 <br/>
 (DAO Helper v1): v0.6.12+commit.27d51765 <br/>
+(EBEN Governance v1): v0.6.12+commit.27d51765 <br/>
 <br/>
 <h3>Deployed Contracts on SmartBCH Mainnet:</h3>
 Wrapped BCH: 0x3743eC0673453E5009310C727Ba4eaF7b3a1cc04 <br/>
@@ -48,6 +49,7 @@ IBO v2 Conclusion Strategy - Simply Sending Offering Tokens: 0x322de556F8d2368E4
 IBO v2 Conclusion Strategy - Simply Sending Raising Tokens: 0x448b2DdA9928bFE3b4605C725Ee28b5f2Ef75792<br/>
 IBO v2 Conclusion Strategy - Time-Lock Raising Tokens: 0x3c71f8DBcf49F793f381787119E9E33B6eaa5DE6<br/>
 DAO Helper v1: 0x61EF60961230a9a84bc911fFc76302dCb435dB91<br/>
+EBEN Governance v1: 0x5dfE639272131B6f8157b5716c6fD74f8C5a13a2<br/>
 <br/>
 <h3>Deployed Contracts on SmartBCH Amber Testnet:</h3>
 LP Factory: 0x769e1fdbA5d0e397F34fD9d9B49F3d83F543DD02<br/>
