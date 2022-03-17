@@ -22,6 +22,7 @@
 (IBO v2 Factory): v0.6.12+commit.27d51765 <br/>
 (IBO v2 Conclusion Strategy - Simply Sending Offering Tokens): v0.6.12+commit.27d51765 <br/>
 (IBO v2 Conclusion Strategy - Simply Sending Raising Tokens): v0.6.12+commit.27d51765 <br/>
+(IBO v2 Conclusion Strategy - Time-Lock Offering Tokens): v0.6.12+commit.27d51765 <br/>
 (IBO v2 Conclusion Strategy - Time-Lock Raising Tokens): v0.6.12+commit.27d51765 <br/>
 (DAO Helper v1): v0.6.12+commit.27d51765 <br/>
 (EBEN Governance v1): v0.6.12+commit.27d51765 <br/>
