@@ -47,6 +47,7 @@ Ranch Factory: 0x15F252B98e9195089D12e283Cd8388b1687C6b8E<br/>
 IBO v2 Factory: 0x455D6EAD2bbB3553Be12A9528054A41136FeB731<br/>
 IBO v2 Conclusion Strategy - Simply Sending Offering Tokens: 0x322de556F8d2368E47753C67B73F00e954fE9b70<br/>
 IBO v2 Conclusion Strategy - Simply Sending Raising Tokens: 0x448b2DdA9928bFE3b4605C725Ee28b5f2Ef75792<br/>
+IBO v2 Conclusion Strategy - Time-Lock Offering Tokens: 0x9B91e9d6Fe836e8827c35815A8e701a53fA2D88c<br/>
 IBO v2 Conclusion Strategy - Time-Lock Raising Tokens: 0x3c71f8DBcf49F793f381787119E9E33B6eaa5DE6<br/>
 DAO Helper v1: 0x61EF60961230a9a84bc911fFc76302dCb435dB91<br/>
 EBEN Governance v1: 0x5dfE639272131B6f8157b5716c6fD74f8C5a13a2<br/>
