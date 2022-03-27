@@ -25,6 +25,7 @@
 (IBO v2 Conclusion Strategy - Time-Lock Remaining Offering Tokens): v0.6.12+commit.27d51765 <br/>
 (IBO v2 Conclusion Strategy - Time-Lock Raised Tokens): v0.6.12+commit.27d51765 <br/>
 (IBO v2 Conclusion Strategy - Adding Raised Tokens to Liquidity and Lock): v0.6.12+commit.27d51765 <br/>
+(IBO v2 Conclusion Strategy - Sending Remaining Offering Tokens to the Strategy for Raised Tokens): v0.6.12+commit.27d51765 <br/>
 (DAO Helper v1): v0.6.12+commit.27d51765 <br/>
 (EBEN Governance v1): v0.6.12+commit.27d51765 <br/>
 (Candy House): v0.6.12+commit.27d51765 <br/>
@@ -53,6 +54,7 @@ IBO v2 Conclusion Strategy - Simply Sending Raised Tokens: 0x448b2DdA9928bFE3b46
 IBO v2 Conclusion Strategy - Time-Lock Remaining Offering Tokens: 0x9B91e9d6Fe836e8827c35815A8e701a53fA2D88c<br/>
 IBO v2 Conclusion Strategy - Time-Lock Raised Tokens: 0x3c71f8DBcf49F793f381787119E9E33B6eaa5DE6<br/>
 IBO v2 Conclusion Strategy - Adding Raised Tokens to Liquidity and Lock: 0xa230368E7F85c35d0195728e149e1d80D7858995<br/>
+IBO v2 Conclusion Strategy - Sending Remaining Offering Tokens to the Strategy for Raised Tokens: 0x18f08fdE3d616f5DeaF8b37d6abF25F5386732bB<br/>
 DAO Helper v1: 0x61EF60961230a9a84bc911fFc76302dCb435dB91<br/>
 EBEN Governance v1: 0x5dfE639272131B6f8157b5716c6fD74f8C5a13a2<br/>
 Candy House: 0xe81E059d7Dd6B0b99c6b3344325D9AbC92E7f2e3<br/>
