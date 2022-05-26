@@ -61,7 +61,7 @@ IBO v2 Conclusion Strategy - Sending Remaining Offering Tokens to the Strategy f
 DAO Helper v1: 0x61EF60961230a9a84bc911fFc76302dCb435dB91<br/>
 EBEN Governance v1: 0x5dfE639272131B6f8157b5716c6fD74f8C5a13a2<br/>
 Candy House: 0xe81E059d7Dd6B0b99c6b3344325D9AbC92E7f2e3<br/>
-Airdropper: 0x9a0E7a1129801d1294C7F62b49F6A3b294a3133c<br/>
+Airdropper: 0x12333a34bcCa83F7543f3DF7a54c3372883f1931<br/>
 <br/>
 <h3>Deployed Contracts on SmartBCH Amber Testnet:</h3>
 LP Factory: 0x769e1fdbA5d0e397F34fD9d9B49F3d83F543DD02<br/>

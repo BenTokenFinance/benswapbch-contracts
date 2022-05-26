@@ -417,6 +417,8 @@ library SafeERC20 {
 contract Airdropper {
   using SafeERC20 for IERC20;
 
+  event Airdrop(address indexed sender, address indexed token, uint256 receiverCount, uint256 totalAmount);
+
   /**
    * @dev doAirdrop is the main method for distribution
    * @param token airdropped token address
@@ -425,11 +427,15 @@ contract Airdropper {
    */
   function doAirdrop(IERC20 token, address[] calldata addresses, uint256 [] calldata values) external returns (uint256) {
     uint256 i = 0;
+    uint256 total = 0;
 
     while (i < addresses.length) {
       token.safeTransferFrom(msg.sender, addresses[i], values[i]);
+      total += values[i];
       i += 1;
     }
+
+    emit Airdrop(msg.sender, address(token), i, total);
 
     return i;
   }
