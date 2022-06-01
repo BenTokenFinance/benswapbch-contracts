@@ -31,6 +31,9 @@
 (EBEN Governance v1): v0.6.12+commit.27d51765 <br/>
 (Candy House): v0.6.12+commit.27d51765 <br/>
 (Airdropper): 0.6.3+commit.8dda9521 <br/>
+(PokéBen): v0.8.4+commit.c7e474f2 <br/>
+(PokéBenKindRaritySetting): v0.8.4+commit.c7e474f2 <br/>
+(PokéBenHuntV1): v0.8.4+commit.c7e474f2 <br/>
 <br/>
 <h3>Deployed Contracts on SmartBCH Mainnet:</h3>
 Wrapped BCH: 0x3743eC0673453E5009310C727Ba4eaF7b3a1cc04 <br/>
@@ -61,7 +64,10 @@ IBO v2 Conclusion Strategy - Sending Remaining Offering Tokens to the Strategy f
 DAO Helper v1: 0x61EF60961230a9a84bc911fFc76302dCb435dB91<br/>
 EBEN Governance v1: 0x5dfE639272131B6f8157b5716c6fD74f8C5a13a2<br/>
 Candy House: 0xe81E059d7Dd6B0b99c6b3344325D9AbC92E7f2e3<br/>
-Airdropper: 0x12333a34bcCa83F7543f3DF7a54c3372883f1931<br/>
+Airdropper: 0xc13d273485B4Db1C5DC3FBe7f403E7b52CA3BFAd<br/>
+PokéBen: 0xFDEd6cD4B88a24e00d9Ea242338367fe734CBff5 <br/>
+PokéBenKindRaritySetting: 0xCfA1A45d2C9590d93AA0403CD388F944D8322937 <br/>
+PokéBenHuntV1: 0x0b57c0EE728bbe2fe61567a6fbE12c4734cB7D3e <br/>
 <br/>
 <h3>Deployed Contracts on SmartBCH Amber Testnet:</h3>
 LP Factory: 0x769e1fdbA5d0e397F34fD9d9B49F3d83F543DD02<br/>
