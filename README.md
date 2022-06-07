@@ -34,6 +34,7 @@
 (PokéBen): v0.8.4+commit.c7e474f2 <br/>
 (PokéBenKindRaritySetting): v0.8.4+commit.c7e474f2 <br/>
 (PokéBenHuntV1): v0.8.4+commit.c7e474f2 <br/>
+(PokéBenNFTNameExtension): v0.8.4+commit.c7e474f2 <br/>
 <br/>
 <h3>Deployed Contracts on SmartBCH Mainnet:</h3>
 Wrapped BCH: 0x3743eC0673453E5009310C727Ba4eaF7b3a1cc04 <br/>
@@ -68,6 +69,7 @@ Airdropper: 0xc13d273485B4Db1C5DC3FBe7f403E7b52CA3BFAd<br/>
 PokéBen: 0xFDEd6cD4B88a24e00d9Ea242338367fe734CBff5 <br/>
 PokéBenKindRaritySetting: 0xCfA1A45d2C9590d93AA0403CD388F944D8322937 <br/>
 PokéBenHuntV1: 0x0b57c0EE728bbe2fe61567a6fbE12c4734cB7D3e <br/>
+PokéBenNFTNameExtension: 0xfaf933c76E2ae21a63DF65bbD3888B3FB2Fc43Ae <br/>
 <br/>
 <h3>Deployed Contracts on SmartBCH Amber Testnet:</h3>
 LP Factory: 0x769e1fdbA5d0e397F34fD9d9B49F3d83F543DD02<br/>
