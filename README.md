@@ -36,6 +36,7 @@
 (PokéBenHuntV1): v0.8.4+commit.c7e474f2 <br/>
 (PokéBenNFTNameExtension): v0.8.4+commit.c7e474f2 <br/>
 (UpdatableErc721WithLimitSupply01): v0.8.4+commit.c7e474f2 <br/>
+(UpdatableErc721WithLimitSupply02): v0.8.4+commit.c7e474f2 <br/>
 <br/>
 <h3>Deployed Contracts on SmartBCH Mainnet:</h3>
 Wrapped BCH: 0x3743eC0673453E5009310C727Ba4eaF7b3a1cc04 <br/>
