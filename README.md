@@ -35,6 +35,9 @@
 (PokéBenKindRaritySetting): v0.8.4+commit.c7e474f2 <br/>
 (PokéBenHuntV1): v0.8.4+commit.c7e474f2 <br/>
 (PokéBenNFTNameExtension): v0.8.4+commit.c7e474f2 <br/>
+(PokéBenItem): v0.8.4+commit.c7e474f2 <br/>
+(PokéBenPowerExtension): v0.8.4+commit.c7e474f2 <br/>
+(PokéBenViridianForest): v0.8.4+commit.c7e474f2 <br/>
 (UpdatableErc721WithLimitSupply01): v0.8.4+commit.c7e474f2 <br/>
 (UpdatableErc721WithLimitSupply02): v0.8.4+commit.c7e474f2 <br/>
 <br/>
@@ -68,11 +71,14 @@ DAO Helper v1: 0x61EF60961230a9a84bc911fFc76302dCb435dB91<br/>
 EBEN Governance v1: 0x5dfE639272131B6f8157b5716c6fD74f8C5a13a2<br/>
 Candy House: 0xe81E059d7Dd6B0b99c6b3344325D9AbC92E7f2e3<br/>
 Airdropper: 0xc13d273485B4Db1C5DC3FBe7f403E7b52CA3BFAd<br/>
+Ben Token Finance 1st Anniversary Souvenirs (UpdatableErc721WithLimitSupply01): 0x835059009AAa5179d63f883546D1bc330DEd5653 <br/>
 PokéBen: 0xFDEd6cD4B88a24e00d9Ea242338367fe734CBff5 <br/>
 PokéBenKindRaritySetting: 0xCfA1A45d2C9590d93AA0403CD388F944D8322937 <br/>
 PokéBenHuntV1: 0x0b57c0EE728bbe2fe61567a6fbE12c4734cB7D3e <br/>
 PokéBenNFTNameExtension: 0xfaf933c76E2ae21a63DF65bbD3888B3FB2Fc43Ae <br/>
-Ben Token Finance 1st Anniversary Souvenirs (UpdatableErc721WithLimitSupply01): 0x835059009AAa5179d63f883546D1bc330DEd5653 <br/>
+PokéBenItem: 0x335bF14Af7c6b2993434bB700AF0f1Afcf27d782 <br/>
+PokéBenPowerExtensionV1: 0xbbd463f68ce78f89335868d745Ab0Bf9D34D5d41 <br/>
+PokéBenViridianForest: 0x1F902bDDd8F37285E0303501394e1617EaA463e9 <br/>
 <br/>
 <h3>Deployed Contracts on SmartBCH Amber Testnet:</h3>
 LP Factory: 0x769e1fdbA5d0e397F34fD9d9B49F3d83F543DD02<br/>
