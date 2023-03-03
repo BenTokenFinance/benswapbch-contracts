@@ -51,6 +51,7 @@ contract PokeBenViridianForest is Ownable {
     using SafeERC20 for IERC20;
 
     IPokeBen public pokeben;
+    // Must use PokéBenKindRaritySettingLite
     IPokeBenKindRaritySetting public pokebenKindRaritySetting;
     IPokeBenItem public pokebenitem;
     IPokeBenPowerExtension public pokebenpower;

@@ -7,17 +7,15 @@ import "@openzeppelin/contracts/access/Ownable.sol";
 import "@openzeppelin/contracts/utils/Counters.sol";
 import "@openzeppelin/contracts/utils/Strings.sol"; 
 
-contract UpdatableErc721WithLimitSupply02 is ERC721,Ownable,ERC721Enumerable {
+contract UpdatableErc721WithUnlimitedSuppy01 is ERC721,Ownable,ERC721Enumerable {
     using Counters for Counters.Counter;
     using Strings for uint256;
     Counters.Counter private _tokenIdCounter;
        
     string private _uri;
-    uint256 private _maxSupply;
 
-    constructor(string memory name_, string memory symbol_, string memory uri_, uint256 maxSupply_) ERC721(name_, symbol_) {
+    constructor(string memory name_, string memory symbol_, string memory uri_) ERC721(name_, symbol_) {
         _uri = uri_;
-        _maxSupply = maxSupply_;
         
         _tokenIdCounter.increment();   // skip 0
     }
@@ -30,13 +28,7 @@ contract UpdatableErc721WithLimitSupply02 is ERC721,Ownable,ERC721Enumerable {
         _uri = newuri;
     }
 
-    function maxSupply() external view returns (uint256) {
-        return _maxSupply;
-    }
-
     function safeMint(address to) public onlyOwner {
-        require(_tokenIdCounter.current() <= _maxSupply , "Max amount minted");
-
         _safeMint(to, _tokenIdCounter.current());
         _tokenIdCounter.increment();
     }

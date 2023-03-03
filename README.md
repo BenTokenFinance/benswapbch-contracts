@@ -39,17 +39,23 @@
 (PokéBenAbilityScrollSetting): v0.8.4+commit.c7e474f2 <br/>
 (PokéBenHuntV1): v0.8.4+commit.c7e474f2 <br/>
 (PokéBenNFTNameExtension): v0.8.4+commit.c7e474f2 <br/>
+(PokéBenAbilityExtension): v0.8.17+commit.8df45f5f <br/>
 (PokéBenItem): v0.8.4+commit.c7e474f2 <br/>
-(PokéBenPowerExtension): v0.8.4+commit.c7e474f2 <br/>
+(PokéBenPowerExtensionV1): v0.8.4+commit.c7e474f2 <br/>
+(PokéBenPowerExtensionV2): v0.8.17+commit.8df45f5f <br/>
 (PokéBenViridianForest): v0.8.4+commit.c7e474f2 <br/>
+(PokéBenAbilityTrainingRoomV1):  v0.8.17+commit.8df45f5f <br/>
 (UpdatableErc721WithLimitSupply01): v0.8.4+commit.c7e474f2 <br/>
 (UpdatableErc721WithLimitSupply02): v0.8.4+commit.c7e474f2 <br/>
+(UpdatableErc721WithUnlimitedSuppy01): v0.8.17+commit.8df45f5f <br/>
+(FarmVoting): v0.8.4+commit.c7e474f2 <br/>
+(NFTFactorySingle): v0.8.7+commit.c7e474f2 <br/>
 <br/>
 <h3>Deployed Contracts on SmartBCH Mainnet:</h3>
 Wrapped BCH: 0x3743eC0673453E5009310C727Ba4eaF7b3a1cc04 <br/>
 Multicall: 0x1b38EBAd553f218e2962Cb1C0539Abb5d6A37774<br/>
 LP Factory: 0x8d973bAD782c1FFfd8FcC9d7579542BA7Dd0998D<br/>
-AMM Router: 0xa194133ED572D86fe27796F2feADBAFc062cB9E0<br/>
+AMM Router: 0x0c1Cb50D5eEd1beA4b4dD62B6368C0CA63AbaC11<br/>
 Green Ben: 0x77CB87b57F54667978Eb1B199b28a0db8C8E1c0B <br/>
 MasterBreeder: 0xDEa721EFe7cBC0fCAb7C8d65c598b21B6373A2b6 <br/>
 Preseller: 0x7190D576214deEb04b5E6DdCf11E8b1Bfc396791 <br/>
@@ -84,9 +90,17 @@ PokéBenAbilitySetting: 0x53c555A2C38B432519c0e1C450daeee3360e9Cf4 <br/>
 PokéBenAbilityScrollSetting: 0x196fe2998d767CC54f1052540dD3740F2046A157 <br/>
 PokéBenHuntV1: 0x0b57c0EE728bbe2fe61567a6fbE12c4734cB7D3e <br/>
 PokéBenNFTNameExtension: 0xfaf933c76E2ae21a63DF65bbD3888B3FB2Fc43Ae <br/>
+PokéBenAbilityExtension: 0x23662b10e4067480A39d337BA08ac898B90b7F80 <br/>
 PokéBenItem: 0x335bF14Af7c6b2993434bB700AF0f1Afcf27d782 <br/>
-PokéBenPowerExtensionV1: 0xbbd463f68ce78f89335868d745Ab0Bf9D34D5d41 <br/>
+PokéBenPowerExtensionV1 (Deprecated): 0xbbd463f68ce78f89335868d745Ab0Bf9D34D5d41 <br/>
+PokéBenPowerExtensionV2: 0x9eeA863eC0065428C0279bb4500B7a71c65F78cC <br/>
 PokéBenViridianForest: 0x1F902bDDd8F37285E0303501394e1617EaA463e9 <br/>
+PokéBenAbilityTrainingRoomV1: 0x9e1840dD8ACD4439793260E9c738C2c980814d43 <br/>
+FarmVoting: 0xc0E541a34B0E1c6fFf51b1780DE899873B6C81f7 <br/>
+Ben Token Finance 2022 Christmas Souvenirs (UpdatableErc721WithLimitSupply02): 0xA76F56fCDA929FfFAf5710AFebe5403B5b3018Bd <br/>
+Miscellaneous (NFTFactorySingle): 0xF8E0755544ED3133182085773213727Eb05258bd <br/>
+BenSwap Tutorial (UpdatableErc721WithUnlimitedSuppy01): 0xC7937210F05Da6b0185d67c2D438256DF15305a3 <br/>
+BenSwap Tweet (UpdatableErc721WithUnlimitedSuppy01): 0x9F8211193b71BF602417f482c0C37Cfdf3755991 <br/>
 <br/>
 <h3>Deployed Contracts on SmartBCH Amber Testnet:</h3>
 LP Factory: 0x769e1fdbA5d0e397F34fD9d9B49F3d83F543DD02<br/>
