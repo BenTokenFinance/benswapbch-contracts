@@ -51,7 +51,7 @@
 (FarmVoting): v0.8.4+commit.c7e474f2 <br/>
 (NFTFactorySingle): v0.8.7+commit.c7e474f2 <br/>
 <br/>
-<h3>Deployed Contracts on SmartBCH Mainnet:</h3>
+<h3>Deployed Contracts on smartBCH Mainnet:</h3>
 Wrapped BCH: 0x3743eC0673453E5009310C727Ba4eaF7b3a1cc04 <br/>
 Multicall: 0x1b38EBAd553f218e2962Cb1C0539Abb5d6A37774<br/>
 LP Factory: 0x8d973bAD782c1FFfd8FcC9d7579542BA7Dd0998D<br/>
@@ -102,7 +102,7 @@ Miscellaneous (NFTFactorySingle): 0xF8E0755544ED3133182085773213727Eb05258bd <br
 BenSwap Tutorial (UpdatableErc721WithUnlimitedSuppy01): 0xC7937210F05Da6b0185d67c2D438256DF15305a3 <br/>
 BenSwap Tweet (UpdatableErc721WithUnlimitedSuppy01): 0x9F8211193b71BF602417f482c0C37Cfdf3755991 <br/>
 <br/>
-<h3>Deployed Contracts on SmartBCH Amber Testnet:</h3>
+<h3>Deployed Contracts on smartBCH Amber Testnet:</h3>
 LP Factory: 0x769e1fdbA5d0e397F34fD9d9B49F3d83F543DD02<br/>
 AMM Router: 0x221C2c57B0dAec7aF9A3B03c384c0C99e066b612<br/>
 Multicall: 0xd512aB1c3650dDb220C0E6Fa970Ff3AC640eFb7f<br/>
