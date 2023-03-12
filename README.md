@@ -50,6 +50,7 @@
 (UpdatableErc721WithUnlimitedSuppy01): v0.8.17+commit.8df45f5f <br/>
 (FarmVoting): v0.8.4+commit.c7e474f2 <br/>
 (NFTFactorySingle): v0.8.7+commit.c7e474f2 <br/>
+(TokenBurnerV1): v0.8.18+commit.87f61d96 <br/>
 <br/>
 <h3>Deployed Contracts on smartBCH Mainnet:</h3>
 Wrapped BCH: 0x3743eC0673453E5009310C727Ba4eaF7b3a1cc04 <br/>
@@ -101,6 +102,7 @@ Ben Token Finance 2022 Christmas Souvenirs (UpdatableErc721WithLimitSupply02): 0
 Miscellaneous (NFTFactorySingle): 0xF8E0755544ED3133182085773213727Eb05258bd <br/>
 BenSwap Tutorial (UpdatableErc721WithUnlimitedSuppy01): 0xC7937210F05Da6b0185d67c2D438256DF15305a3 <br/>
 BenSwap Tweet (UpdatableErc721WithUnlimitedSuppy01): 0x9F8211193b71BF602417f482c0C37Cfdf3755991 <br/>
+TokenBurnerV1: 0x71D9C349e35f73B782022d912B5dADa4235fDa06 <br/>
 <br/>
 <h3>Deployed Contracts on smartBCH Amber Testnet:</h3>
 LP Factory: 0x769e1fdbA5d0e397F34fD9d9B49F3d83F543DD02<br/>
