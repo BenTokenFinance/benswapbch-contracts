@@ -35,6 +35,7 @@
 (PokéBenKindRaritySetting): v0.8.4+commit.c7e474f2 <br/>
 (PokéBenKindRaritySettingLite): v0.8.4+commit.c7e474f2 <br/>
 (PokéBenKindTypeSetting): v0.8.4+commit.c7e474f2 <br/>
+(PokéBenKindEvolutionSetting): v0.8.18+commit.87f61d96 <br/>
 (PokéBenAbilitySetting): v0.8.4+commit.c7e474f2 <br/>
 (PokéBenAbilityScrollSetting): v0.8.4+commit.c7e474f2 <br/>
 (PokéBenHuntV1): v0.8.4+commit.c7e474f2 <br/>
@@ -44,6 +45,7 @@
 (PokéBenPowerExtensionV1): v0.8.4+commit.c7e474f2 <br/>
 (PokéBenPowerExtensionV2): v0.8.17+commit.8df45f5f <br/>
 (PokéBenViridianForest): v0.8.4+commit.c7e474f2 <br/>
+(PokéBenEvoluterV1): v0.8.18+commit.87f61d96 <br/>
 (PokéBenAbilityTrainingRoomV1):  v0.8.17+commit.8df45f5f <br/>
 (UpdatableErc721WithLimitSupply01): v0.8.4+commit.c7e474f2 <br/>
 (UpdatableErc721WithLimitSupply02): v0.8.4+commit.c7e474f2 <br/>
@@ -87,6 +89,7 @@ PokéBen: 0xFDEd6cD4B88a24e00d9Ea242338367fe734CBff5 <br/>
 PokéBenKindRaritySetting: 0xCfA1A45d2C9590d93AA0403CD388F944D8322937 <br/>
 PokéBenKindRaritySettingLite: 0xf8f7e6632A223E674631825b4D23E67224307665 <br/>
 PokéBenKindTypeSetting: 0x9CdD9a21B8A5eA28B96d6a2B3B86adF21aE52001 <br/>
+PokéBenKindEvolutionSetting: 0x60Cb95F5b31b3c2959aB8a262BF54B90AB4F1Bca <br/>
 PokéBenAbilitySetting: 0x53c555A2C38B432519c0e1C450daeee3360e9Cf4 <br/>
 PokéBenAbilityScrollSetting: 0x196fe2998d767CC54f1052540dD3740F2046A157 <br/>
 PokéBenHuntV1: 0x0b57c0EE728bbe2fe61567a6fbE12c4734cB7D3e <br/>
@@ -97,6 +100,7 @@ PokéBenPowerExtensionV1 (Deprecated): 0xbbd463f68ce78f89335868d745Ab0Bf9D34D5d4
 PokéBenPowerExtensionV2: 0x9eeA863eC0065428C0279bb4500B7a71c65F78cC <br/>
 PokéBenViridianForest: 0x1F902bDDd8F37285E0303501394e1617EaA463e9 <br/>
 PokéBenAbilityTrainingRoomV1: 0x9e1840dD8ACD4439793260E9c738C2c980814d43 <br/>
+PokéBenEvoluterV1: 0x201fA5675EF8b87662066F802f7cACE876102297<br/>
 FarmVoting: 0xc0E541a34B0E1c6fFf51b1780DE899873B6C81f7 <br/>
 Ben Token Finance 2022 Christmas Souvenirs (UpdatableErc721WithLimitSupply02): 0xA76F56fCDA929FfFAf5710AFebe5403B5b3018Bd <br/>
 Miscellaneous (NFTFactorySingle): 0xF8E0755544ED3133182085773213727Eb05258bd <br/>
