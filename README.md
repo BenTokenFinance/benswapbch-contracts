@@ -39,6 +39,7 @@
 (PokéBenAbilitySetting): v0.8.4+commit.c7e474f2 <br/>
 (PokéBenAbilityScrollSetting): v0.8.4+commit.c7e474f2 <br/>
 (PokéBenHuntV1): v0.8.4+commit.c7e474f2 <br/>
+(PokéBenHuntV2): v0.8.18+commit.87f61d96 <br/>
 (PokéBenNFTNameExtension): v0.8.4+commit.c7e474f2 <br/>
 (PokéBenAbilityExtension): v0.8.17+commit.8df45f5f <br/>
 (PokéBenItem): v0.8.4+commit.c7e474f2 <br/>
@@ -92,7 +93,8 @@ PokéBenKindTypeSetting: 0x9CdD9a21B8A5eA28B96d6a2B3B86adF21aE52001 <br/>
 PokéBenKindEvolutionSetting: 0x60Cb95F5b31b3c2959aB8a262BF54B90AB4F1Bca <br/>
 PokéBenAbilitySetting: 0x53c555A2C38B432519c0e1C450daeee3360e9Cf4 <br/>
 PokéBenAbilityScrollSetting: 0x196fe2998d767CC54f1052540dD3740F2046A157 <br/>
-PokéBenHuntV1: 0x0b57c0EE728bbe2fe61567a6fbE12c4734cB7D3e <br/>
+PokéBenHuntV1 (Deprecated): 0x0b57c0EE728bbe2fe61567a6fbE12c4734cB7D3e <br/>
+PokéBenHuntV2: 0x2f9EdbEA43256546a9269598a033d65E67Ef1B9b <br/>
 PokéBenNFTNameExtension: 0xfaf933c76E2ae21a63DF65bbD3888B3FB2Fc43Ae <br/>
 PokéBenAbilityExtension: 0x23662b10e4067480A39d337BA08ac898B90b7F80 <br/>
 PokéBenItem: 0x335bF14Af7c6b2993434bB700AF0f1Afcf27d782 <br/>
