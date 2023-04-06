@@ -48,6 +48,8 @@
 (PokéBenViridianForest): v0.8.4+commit.c7e474f2 <br/>
 (PokéBenEvoluterV1): v0.8.18+commit.87f61d96 <br/>
 (PokéBenAbilityTrainingRoomV1):  v0.8.17+commit.8df45f5f <br/>
+(PokéBenTeamExtension):  v0.8.17+commit.8df45f5f <br/>
+(PokéBenPvpExtension):  v0.8.17+commit.8df45f5f <br/>
 (UpdatableErc721WithLimitSupply01): v0.8.4+commit.c7e474f2 <br/>
 (UpdatableErc721WithLimitSupply02): v0.8.4+commit.c7e474f2 <br/>
 (UpdatableErc721WithUnlimitedSuppy01): v0.8.17+commit.8df45f5f <br/>
@@ -103,6 +105,10 @@ PokéBenPowerExtensionV2: 0x9eeA863eC0065428C0279bb4500B7a71c65F78cC <br/>
 PokéBenViridianForest: 0x1F902bDDd8F37285E0303501394e1617EaA463e9 <br/>
 PokéBenAbilityTrainingRoomV1: 0x9e1840dD8ACD4439793260E9c738C2c980814d43 <br/>
 PokéBenEvoluterV1: 0x201fA5675EF8b87662066F802f7cACE876102297<br/>
+PokéBenPvpExtension(Proxy): 0xEb04747bceA46eBD61D441389D0147c279BC3E5f<br/>
+PokéBenPvpExtension(Imp - Version 1): 0xB0069F1b176C4054D520F24EB96069d547e5682a<br/>
+PokéBenTeamExtension(Proxy): 0x481E2ab61868F6a8DBe49b386a1fcE17E1Cd2B23<br/>
+PokéBenTeamExtension(Imp - Version 1): 0xB069EAc882b48250b390D6D156c7566cD038EC6b<br/>
 FarmVoting: 0xc0E541a34B0E1c6fFf51b1780DE899873B6C81f7 <br/>
 Ben Token Finance 2022 Christmas Souvenirs (UpdatableErc721WithLimitSupply02): 0xA76F56fCDA929FfFAf5710AFebe5403B5b3018Bd <br/>
 Miscellaneous (NFTFactorySingle): 0xF8E0755544ED3133182085773213727Eb05258bd <br/>
