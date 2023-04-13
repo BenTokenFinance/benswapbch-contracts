@@ -56,6 +56,7 @@
 (FarmVoting): v0.8.4+commit.c7e474f2 <br/>
 (NFTFactorySingle): v0.8.7+commit.c7e474f2 <br/>
 (TokenBurnerV1): v0.8.18+commit.87f61d96 <br/>
+(EBENGovernanceUpgradable): v0.8.18+commit.87f61d96 <br/>
 <br/>
 <h3>Deployed Contracts on smartBCH Mainnet:</h3>
 Wrapped BCH: 0x3743eC0673453E5009310C727Ba4eaF7b3a1cc04 <br/>
@@ -84,7 +85,7 @@ IBO v2 Conclusion Strategy - Time-Lock Raised Tokens: 0x3c71f8DBcf49F793f3817871
 IBO v2 Conclusion Strategy - Adding Raised Tokens to Liquidity and Lock: 0xa230368E7F85c35d0195728e149e1d80D7858995<br/>
 IBO v2 Conclusion Strategy - Sending Remaining Offering Tokens to the Strategy for Raised Tokens: 0x18f08fdE3d616f5DeaF8b37d6abF25F5386732bB<br/>
 DAO Helper v1: 0x61EF60961230a9a84bc911fFc76302dCb435dB91<br/>
-EBEN Governance v1: 0x5dfE639272131B6f8157b5716c6fD74f8C5a13a2<br/>
+EBEN Governance v1 (Deprecated): 0x5dfE639272131B6f8157b5716c6fD74f8C5a13a2<br/>
 Candy House: 0xe81E059d7Dd6B0b99c6b3344325D9AbC92E7f2e3<br/>
 Airdropper: 0xc13d273485B4Db1C5DC3FBe7f403E7b52CA3BFAd<br/>
 Ben Token Finance 1st Anniversary Souvenirs (UpdatableErc721WithLimitSupply01): 0x835059009AAa5179d63f883546D1bc330DEd5653 <br/>
@@ -115,6 +116,8 @@ Miscellaneous (NFTFactorySingle): 0xF8E0755544ED3133182085773213727Eb05258bd <br
 BenSwap Tutorial (UpdatableErc721WithUnlimitedSuppy01): 0xC7937210F05Da6b0185d67c2D438256DF15305a3 <br/>
 BenSwap Tweet (UpdatableErc721WithUnlimitedSuppy01): 0x9F8211193b71BF602417f482c0C37Cfdf3755991 <br/>
 TokenBurnerV1: 0x71D9C349e35f73B782022d912B5dADa4235fDa06 <br/>
+EBENGovernanceUpgradable(Proxy): 0x40ea6ca4f670efFeDC269cD01d49e57e481206FC<br/>
+EBENGovernanceUpgradable(Imp - Version 2): 0x6297B5C30dbd0fF608E1aAB547B5406E47127Db4<br/>
 <br/>
 <h3>Deployed Contracts on smartBCH Amber Testnet:</h3>
 LP Factory: 0x769e1fdbA5d0e397F34fD9d9B49F3d83F543DD02<br/>
