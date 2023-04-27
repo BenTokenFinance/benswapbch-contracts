@@ -19,6 +19,7 @@
 (SEP-20 Token Template - Basic): v0.6.12+commit.27d51765 <br/>
 (SEP-20 Token Template - Liquidity Generator): v0.8.4+commit.c7e474f2   (optimization enabled with 200 runs)<br/>
 (SEP-20 Token Template - Annuity): v0.8.4+commit.c7e474f2<br/>
+(SEP-20 Token Template - MultiMint): v0.6.12+commit.27d51765 <br/>
 (Ranch Factory): v0.6.12+commit.27d51765 <br/>
 (IBO v2 Factory): v0.6.12+commit.27d51765 <br/>
 (IBO v2 Conclusion Strategy - Simply Sending Remaining Offering Tokens): v0.6.12+commit.27d51765 <br/>
@@ -76,6 +77,7 @@ SEP-20 Factory: 0x73410fa5CE7401272055a45DCaff7170D343433a<br/>
 SEP-20 Token Template - Basic: 0xE8280F2cd8728DA467c8Ec101241ef39f0041d35<br/>
 SEP-20 Token Template - Liquidity Generator: 0x6a737C379DaE77Bb085cA0c2902360A74Bf982A2<br/>
 SEP-20 Token Template - Annuity: 0xF791b30349DCf95b19ED7011808EA7adEad98EAE<br/>
+SEP-20 Token Template - MultiMint: 0x6126F03384D805567FD5A4879D7A1B1a3Bfd99F4 <br/>
 Ranch Factory: 0x15F252B98e9195089D12e283Cd8388b1687C6b8E<br/>
 IBO v2 Factory: 0x455D6EAD2bbB3553Be12A9528054A41136FeB731<br/>
 IBO v2 Conclusion Strategy - Simply Sending Remaining Offering Tokens: 0x322de556F8d2368E47753C67B73F00e954fE9b70<br/>
