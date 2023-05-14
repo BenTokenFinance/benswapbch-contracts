@@ -46,11 +46,13 @@
 (PokéBenItem): v0.8.4+commit.c7e474f2 <br/>
 (PokéBenPowerExtensionV1): v0.8.4+commit.c7e474f2 <br/>
 (PokéBenPowerExtensionV2): v0.8.17+commit.8df45f5f <br/>
+(PokéBenPowerExtensionUpgradable):  v0.8.19+commit.7dd6d404 <br/>
 (PokéBenViridianForest): v0.8.4+commit.c7e474f2 <br/>
 (PokéBenEvoluterV1): v0.8.18+commit.87f61d96 <br/>
 (PokéBenAbilityTrainingRoomV1):  v0.8.17+commit.8df45f5f <br/>
 (PokéBenTeamExtension):  v0.8.17+commit.8df45f5f <br/>
 (PokéBenPvpExtension):  v0.8.17+commit.8df45f5f <br/>
+(PokéBenShop):  v0.8.19+commit.7dd6d404 <br/>
 (UpdatableErc721WithLimitSupply01): v0.8.4+commit.c7e474f2 <br/>
 (UpdatableErc721WithLimitSupply02): v0.8.4+commit.c7e474f2 <br/>
 (UpdatableErc721WithUnlimitedSuppy01): v0.8.17+commit.8df45f5f <br/>
@@ -104,22 +106,26 @@ PokéBenNFTNameExtension: 0xfaf933c76E2ae21a63DF65bbD3888B3FB2Fc43Ae <br/>
 PokéBenAbilityExtension: 0x23662b10e4067480A39d337BA08ac898B90b7F80 <br/>
 PokéBenItem: 0x335bF14Af7c6b2993434bB700AF0f1Afcf27d782 <br/>
 PokéBenPowerExtensionV1 (Deprecated): 0xbbd463f68ce78f89335868d745Ab0Bf9D34D5d41 <br/>
-PokéBenPowerExtensionV2: 0x9eeA863eC0065428C0279bb4500B7a71c65F78cC <br/>
+PokéBenPowerExtensionV2 (Deprecated): 0x9eeA863eC0065428C0279bb4500B7a71c65F78cC <br/>
+PokéBenPowerExtensionUpgradable {Proxy}: 0xa02Bd13da796DcCABf18ae513DDB327Fa5cB3672 <br/>
+PokéBenPowerExtensionUpgradable {Imp - Version 2}: 0x8035AAdF489b48C13CB91cB44996eE7E921f3AD7 <br/>
 PokéBenViridianForest: 0x1F902bDDd8F37285E0303501394e1617EaA463e9 <br/>
 PokéBenAbilityTrainingRoomV1: 0x9e1840dD8ACD4439793260E9c738C2c980814d43 <br/>
 PokéBenEvoluterV1: 0x201fA5675EF8b87662066F802f7cACE876102297<br/>
-PokéBenPvpExtension(Proxy): 0xEb04747bceA46eBD61D441389D0147c279BC3E5f<br/>
-PokéBenPvpExtension(Imp - Version 1): 0xB0069F1b176C4054D520F24EB96069d547e5682a<br/>
-PokéBenTeamExtension(Proxy): 0x481E2ab61868F6a8DBe49b386a1fcE17E1Cd2B23<br/>
-PokéBenTeamExtension(Imp - Version 1): 0xB069EAc882b48250b390D6D156c7566cD038EC6b<br/>
+PokéBenPvpExtension {Proxy}: 0xEb04747bceA46eBD61D441389D0147c279BC3E5f<br/>
+PokéBenPvpExtension {Imp - Version 1}: 0xB0069F1b176C4054D520F24EB96069d547e5682a<br/>
+PokéBenTeamExtension {Proxy}: 0x481E2ab61868F6a8DBe49b386a1fcE17E1Cd2B23<br/>
+PokéBenTeamExtension {Imp - Version 1}: 0xB069EAc882b48250b390D6D156c7566cD038EC6b<br/>
+PokéBenShop {Proxy}: 0x159f884d87cE296a09BBA33Ff297B315Ad509581<br/>
+PokéBenShop {Imp - Version 1}: 0xa704F4477B648EA14EF483A09c57c09767bc2F6B<br/>
 FarmVoting: 0xc0E541a34B0E1c6fFf51b1780DE899873B6C81f7 <br/>
 Ben Token Finance 2022 Christmas Souvenirs (UpdatableErc721WithLimitSupply02): 0xA76F56fCDA929FfFAf5710AFebe5403B5b3018Bd <br/>
 Miscellaneous (NFTFactorySingle): 0xF8E0755544ED3133182085773213727Eb05258bd <br/>
 BenSwap Tutorial (UpdatableErc721WithUnlimitedSuppy01): 0xC7937210F05Da6b0185d67c2D438256DF15305a3 <br/>
 BenSwap Tweet (UpdatableErc721WithUnlimitedSuppy01): 0x9F8211193b71BF602417f482c0C37Cfdf3755991 <br/>
 TokenBurnerV1: 0x71D9C349e35f73B782022d912B5dADa4235fDa06 <br/>
-EBENGovernanceUpgradable(Proxy): 0x40ea6ca4f670efFeDC269cD01d49e57e481206FC<br/>
-EBENGovernanceUpgradable(Imp - Version 2): 0x6297B5C30dbd0fF608E1aAB547B5406E47127Db4<br/>
+EBENGovernanceUpgradable {Proxy}: 0x40ea6ca4f670efFeDC269cD01d49e57e481206FC<br/>
+EBENGovernanceUpgradable {Imp - Version 2}: 0x6297B5C30dbd0fF608E1aAB547B5406E47127Db4<br/>
 <br/>
 <h3>Deployed Contracts on smartBCH Amber Testnet:</h3>
 LP Factory: 0x769e1fdbA5d0e397F34fD9d9B49F3d83F543DD02<br/>
