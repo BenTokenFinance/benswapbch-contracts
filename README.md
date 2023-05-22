@@ -50,9 +50,12 @@
 (PokéBenViridianForest): v0.8.4+commit.c7e474f2 <br/>
 (PokéBenEvoluterV1): v0.8.18+commit.87f61d96 <br/>
 (PokéBenAbilityTrainingRoomV1):  v0.8.17+commit.8df45f5f <br/>
+(PokéBenAbilityTrainingRoomUpgradable):  v0.8.18+commit.87f61d96 <br/>
 (PokéBenTeamExtension):  v0.8.17+commit.8df45f5f <br/>
 (PokéBenPvpExtension):  v0.8.17+commit.8df45f5f <br/>
 (PokéBenShop):  v0.8.19+commit.7dd6d404 <br/>
+(PokéBenMultipurposeExtension): v0.8.18+commit.87f61d96 <br/>
+(PokéBenAdventure): v0.8.18+commit.87f61d96 <br/>
 (UpdatableErc721WithLimitSupply01): v0.8.4+commit.c7e474f2 <br/>
 (UpdatableErc721WithLimitSupply02): v0.8.4+commit.c7e474f2 <br/>
 (UpdatableErc721WithUnlimitedSuppy01): v0.8.17+commit.8df45f5f <br/>
@@ -110,14 +113,29 @@ PokéBenPowerExtensionV2 (Deprecated): 0x9eeA863eC0065428C0279bb4500B7a71c65F78c
 PokéBenPowerExtensionUpgradable {Proxy}: 0xa02Bd13da796DcCABf18ae513DDB327Fa5cB3672 <br/>
 PokéBenPowerExtensionUpgradable {Imp - Version 2}: 0x8035AAdF489b48C13CB91cB44996eE7E921f3AD7 <br/>
 PokéBenViridianForest: 0x1F902bDDd8F37285E0303501394e1617EaA463e9 <br/>
-PokéBenAbilityTrainingRoomV1: 0x9e1840dD8ACD4439793260E9c738C2c980814d43 <br/>
+PokéBenAbilityTrainingRoomV1 (Deprecated): 0x9e1840dD8ACD4439793260E9c738C2c980814d43 <br/>
+PokéBenAbilityTrainingRoomUpgradable {Proxy}: 0x1583aCA9Ad70d6CfF8e7bA27957092CC82310c00 <br/>
+PokéBenAbilityTrainingRoomUpgradable {Imp - Version 2}: 0x35032203cAb203f05d46B0284F91386e286b369e <br/>
 PokéBenEvoluterV1: 0x201fA5675EF8b87662066F802f7cACE876102297<br/>
 PokéBenPvpExtension {Proxy}: 0xEb04747bceA46eBD61D441389D0147c279BC3E5f<br/>
 PokéBenPvpExtension {Imp - Version 1}: 0xB0069F1b176C4054D520F24EB96069d547e5682a<br/>
 PokéBenTeamExtension {Proxy}: 0x481E2ab61868F6a8DBe49b386a1fcE17E1Cd2B23<br/>
 PokéBenTeamExtension {Imp - Version 1}: 0xB069EAc882b48250b390D6D156c7566cD038EC6b<br/>
+PokéBenMultipurposeExtension {Proxy}: 0xc84d10135275bf3dDc713D7fAe9Dd811517c2830 <br/>
+PokéBenMultipurposeExtension {Imp - Version 1}: 0xA5892D9EB9415073B1Cf766b1B122D2b0EEd0FB4 <br/>
 PokéBenShop {Proxy}: 0x159f884d87cE296a09BBA33Ff297B315Ad509581<br/>
 PokéBenShop {Imp - Version 1}: 0xa704F4477B648EA14EF483A09c57c09767bc2F6B<br/>
+PokéBenAdventure {Imp - Version 1}: 0x334beb3d2091211ac1d18d34F0349A0887189263<br/>
+PokéBenAdventureViridianForest {Proxy - PokéBenAdventure}: 0x97D4006Ae886B64ea710bCc80ddEFB6fcDBe0450<br/>
+PokéBenAdventureWellspringCave {Proxy - PokéBenAdventure}: 0x075b15A75240bCf0A23dbDf5EeA2f72c05fEC4FA<br/>
+PokéBenAdventureOreburghMine {Proxy - PokéBenAdventure}: 0xae3Cb93ed07644630fA74979fFB25F5935a149B4<br/>
+PokéBenAdventurePinwheelForest {Proxy - PokéBenAdventure}: 0xB20E49C87F7D4D40Fd8f362acd00d44002963AC3<br/>
+PokéBenAdventureRavagedPath {Proxy - PokéBenAdventure}: 0xc350c41AF4D8E87f003f3f9fF38c2Fc17173a620<br/>
+PokéBenAdventureSproutTower {Proxy - PokéBenAdventure}: 0x440198009fAa1b046DB5f80897B56d6B643A121c<br/>
+PokéBenAdventureDiglettsCave {Proxy - PokéBenAdventure}: 0x674CF2FBaAb5d50A396163833F1e19F981cD9C93<br/>
+PokéBenAdventurePetalburgWoods {Proxy - PokéBenAdventure}: 0xE0B153Cae3391F3Daa472F6b87Bf02dEdb56eD4B<br/>
+PokéBenAdventureRusturfTunnel {Proxy - PokéBenAdventure}: 0xA40DE165745CC0C80f5C79D0bBF33aB5D0110a78<br/>
+PokéBenAdventureDarkCave {Proxy - PokéBenAdventure}: 0x1900f90499845eBF7D687F7731649Bb3e515C0bD<br/>
 FarmVoting: 0xc0E541a34B0E1c6fFf51b1780DE899873B6C81f7 <br/>
 Ben Token Finance 2022 Christmas Souvenirs (UpdatableErc721WithLimitSupply02): 0xA76F56fCDA929FfFAf5710AFebe5403B5b3018Bd <br/>
 Miscellaneous (NFTFactorySingle): 0xF8E0755544ED3133182085773213727Eb05258bd <br/>
