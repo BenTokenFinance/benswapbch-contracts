@@ -112,7 +112,7 @@ PokéBenPowerExtensionV1 (Deprecated): 0xbbd463f68ce78f89335868d745Ab0Bf9D34D5d4
 PokéBenPowerExtensionV2 (Deprecated): 0x9eeA863eC0065428C0279bb4500B7a71c65F78cC <br/>
 PokéBenPowerExtensionUpgradable {Proxy}: 0xa02Bd13da796DcCABf18ae513DDB327Fa5cB3672 <br/>
 PokéBenPowerExtensionUpgradable {Imp - Version 2}: 0x8035AAdF489b48C13CB91cB44996eE7E921f3AD7 <br/>
-PokéBenViridianForest: 0x1F902bDDd8F37285E0303501394e1617EaA463e9 <br/>
+PokéBenViridianForest (Deprecated): 0x1F902bDDd8F37285E0303501394e1617EaA463e9 <br/>
 PokéBenAbilityTrainingRoomV1 (Deprecated): 0x9e1840dD8ACD4439793260E9c738C2c980814d43 <br/>
 PokéBenAbilityTrainingRoomUpgradable {Proxy}: 0x1583aCA9Ad70d6CfF8e7bA27957092CC82310c00 <br/>
 PokéBenAbilityTrainingRoomUpgradable {Imp - Version 2}: 0x35032203cAb203f05d46B0284F91386e286b369e <br/>
