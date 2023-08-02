@@ -56,6 +56,7 @@
 (PokéBenShop):  v0.8.19+commit.7dd6d404 <br/>
 (PokéBenMultipurposeExtension): v0.8.18+commit.87f61d96 <br/>
 (PokéBenAdventure): v0.8.18+commit.87f61d96 <br/>
+(PokéBenHeroPartSetting): v0.8.18+commit.87f61d96 <br/>
 (UpdatableErc721WithLimitSupply01): v0.8.4+commit.c7e474f2 <br/>
 (UpdatableErc721WithLimitSupply02): v0.8.4+commit.c7e474f2 <br/>
 (UpdatableErc721WithUnlimitedSuppy01): v0.8.17+commit.8df45f5f <br/>
@@ -166,6 +167,7 @@ PokéBenAdventureSnowpointTemple {Proxy - PokéBenAdventure}: 0x2ab848C0ad21f1F5
 PokéBenAdventureTurnbackCave {Proxy - PokéBenAdventure}: 0x4F346C63c895eB237D7DAd14Cbfe283Fb15Ba860<br/>
 PokéBenAdventureRelicCastle {Proxy - PokéBenAdventure}: 0x328D69cEBD1744B830761F1E9893E8B4Cc6cC4B2<br/>
 PokéBenAdventureCelestialTower {Proxy - PokéBenAdventure}: 0xc083BDFA598308b07C49aa5Ffe7aA564553B4aC2<br/>
+PokéBenHeroPartSetting: 0xd2c5574F96FD229dDde47d30903376e841C9c25b <br/>
 FarmVoting: 0xc0E541a34B0E1c6fFf51b1780DE899873B6C81f7 <br/>
 Ben Token Finance 2022 Christmas Souvenirs (UpdatableErc721WithLimitSupply02): 0xA76F56fCDA929FfFAf5710AFebe5403B5b3018Bd <br/>
 Miscellaneous (NFTFactorySingle): 0xF8E0755544ED3133182085773213727Eb05258bd <br/>
