@@ -57,6 +57,7 @@
 (PokéBenMultipurposeExtension): v0.8.18+commit.87f61d96 <br/>
 (PokéBenAdventure): v0.8.18+commit.87f61d96 <br/>
 (PokéBenHeroPartSetting): v0.8.18+commit.87f61d96 <br/>
+(PokéBenHero): v0.8.18+commit.87f61d96 <br/>
 (UpdatableErc721WithLimitSupply01): v0.8.4+commit.c7e474f2 <br/>
 (UpdatableErc721WithLimitSupply02): v0.8.4+commit.c7e474f2 <br/>
 (UpdatableErc721WithUnlimitedSuppy01): v0.8.17+commit.8df45f5f <br/>
@@ -109,6 +110,7 @@ PokéBenHuntV2: 0x2f9EdbEA43256546a9269598a033d65E67Ef1B9b <br/>
 PokéBenNFTNameExtension: 0xfaf933c76E2ae21a63DF65bbD3888B3FB2Fc43Ae <br/>
 PokéBenAbilityExtension: 0x23662b10e4067480A39d337BA08ac898B90b7F80 <br/>
 PokéBenItem: 0x335bF14Af7c6b2993434bB700AF0f1Afcf27d782 <br/>
+PokéBenHero: 0x014da337dd4e097935797602332a4649c3F436c1 <br/>
 PokéBenPowerExtensionV1 (Deprecated): 0xbbd463f68ce78f89335868d745Ab0Bf9D34D5d41 <br/>
 PokéBenPowerExtensionV2 (Deprecated): 0x9eeA863eC0065428C0279bb4500B7a71c65F78cC <br/>
 PokéBenPowerExtensionUpgradable {Proxy}: 0xa02Bd13da796DcCABf18ae513DDB327Fa5cB3672 <br/>
