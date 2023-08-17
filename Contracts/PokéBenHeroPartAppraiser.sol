@@ -151,23 +151,23 @@ contract PokeBenHeroPartAppraiser is Ownable {
     }
 
     function getResult(uint256 rand, uint256 rarity) public pure returns (uint256) {
-        uint[] memory rarityChances = new uint[](5);
+        uint[] memory rarityChances = new uint[](7);
         uint totalChances = 0;
-        for (uint i=1; i<=5; i++) {
+        for (uint i=1; i<=6; i++) {
             uint x = rarity >= i ? rarity-i : i-rarity;
-            rarityChances[i] = 10000000 / 10**x;
+            rarityChances[i] = 1000000000 / 25**x;
             totalChances += rarityChances[i];
         }
 
         uint r = rand % totalChances;
         uint runningChance = 0;
-        for (uint i=1; i<=4; i++) {
+        for (uint i=1; i<=5; i++) {
             runningChance += rarityChances[i];
             if (r < runningChance) {
-                return (i-1) * 1000 + Babylonian.sqrt(rand%1000000);
+                return 800 + (i-1) * 1000 + ( i<rarity ? Babylonian.sqrt(rand%1000000) : 1000 - Babylonian.sqrt(rand%1000000) );
             }
         }
 
-        return 4000 + Babylonian.sqrt(rand%1000000);
+        return 6800 - Babylonian.sqrt(rand%1000000);
     }
 }

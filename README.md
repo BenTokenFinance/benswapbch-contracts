@@ -58,6 +58,8 @@
 (PokéBenAdventure): v0.8.18+commit.87f61d96 <br/>
 (PokéBenHeroPartSetting): v0.8.18+commit.87f61d96 <br/>
 (PokéBenHero): v0.8.18+commit.87f61d96 <br/>
+(PokéBenHeroPartAppraiser):  v0.8.18+commit.87f61d96 <br/>
+(PokéBenHeroBeautician):  v0.8.18+commit.87f61d96 <br/>
 (UpdatableErc721WithLimitSupply01): v0.8.4+commit.c7e474f2 <br/>
 (UpdatableErc721WithLimitSupply02): v0.8.4+commit.c7e474f2 <br/>
 (UpdatableErc721WithUnlimitedSuppy01): v0.8.17+commit.8df45f5f <br/>
@@ -170,6 +172,10 @@ PokéBenAdventureTurnbackCave {Proxy - PokéBenAdventure}: 0x4F346C63c895eB237D7
 PokéBenAdventureRelicCastle {Proxy - PokéBenAdventure}: 0x328D69cEBD1744B830761F1E9893E8B4Cc6cC4B2<br/>
 PokéBenAdventureCelestialTower {Proxy - PokéBenAdventure}: 0xc083BDFA598308b07C49aa5Ffe7aA564553B4aC2<br/>
 PokéBenHeroPartSetting: 0xd2c5574F96FD229dDde47d30903376e841C9c25b <br/>
+PokéBenHeroPartAppraiser {Proxy}: 0xD69D5Fe6c95ef8aF143f3070D1370C88e4BE7512 <br/>
+PokéBenHeroPartAppraiser {Imp - Version 1}: 0xef8BAfe51e207B51f2a7D8e22f6e9A30B22b053f <br/>
+PokéBenHeroBeautician {Proxy}: 0x108d5B2Eae269eBeB83a02a77E3da67CB7CD684d <br/>
+PokéBenHeroBeautician {Imp - Version 1}: 0xE936a1e1E07009A2BC6C2EB697BE040215A716Ba <br/>
 FarmVoting: 0xc0E541a34B0E1c6fFf51b1780DE899873B6C81f7 <br/>
 Ben Token Finance 2022 Christmas Souvenirs (UpdatableErc721WithLimitSupply02): 0xA76F56fCDA929FfFAf5710AFebe5403B5b3018Bd <br/>
 Miscellaneous (NFTFactorySingle): 0xF8E0755544ED3133182085773213727Eb05258bd <br/>
