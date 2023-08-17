@@ -127,10 +127,6 @@ contract PokeBenHeroPartAppraiser is Ownable {
         emit AppraisalStart(msg.sender, itemId, fee);
     }
 
-    function abs(uint x) private pure returns (int) {
-        return x >= 0 ? int(x) : -int(x);
-    }
-
     function appraise(uint256 rdm, bytes calldata pi) external {
         AppraisalInfo memory appraisal = getAppraisalInfo[msg.sender];
 
