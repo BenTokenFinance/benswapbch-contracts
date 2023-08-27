@@ -97,17 +97,17 @@ pragma solidity ^0.8.4;
 contract Charities {
     address public owner;
     address[] public whitelist;
-    
-    // address public EBENAddress = 0x77CB87b57F54667978Eb1B199b28a0db8C8E1c0B;
+
+    address public EBENAddress = 0x77CB87b57F54667978Eb1B199b28a0db8C8E1c0B;
     //test eben
-    address public EBENAddress = 0x77beB0D017C743eCa0d22951A3b051A17D50f108;
+    // address public EBENAddress = 0x77beB0D017C743eCa0d22951A3b051A17D50f108;
 
     mapping(address => uint256 ) public getTotalDonation;
     mapping(address => mapping(address => uint256)) public getTotalDonationByCharity;
     event donated(address indexed user, address indexed charity, uint256 amount);
 
     modifier onlyOwner() {
-        require(msg.sender == owner, "Only the owner can call this function");
+        require(msg.sender == owner, "Not owner");
         _;
     }
 
