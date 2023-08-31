@@ -1,5 +1,8 @@
 // SPDX-License-Identifier: GPL-3.0
 
+import "@openzeppelin/contracts/access/Ownable.sol";
+import "@openzeppelin/contracts/proxy/transparent/TransparentUpgradeableProxy.sol";
+
 pragma solidity ^0.8.4;
 interface IBEP20 {
     /**
@@ -94,27 +97,30 @@ interface IBEP20 {
 
 
 pragma solidity ^0.8.4;
-contract Charities {
-    address public owner;
-    address[] public whitelist;
-
-    address public EBENAddress = 0x77CB87b57F54667978Eb1B199b28a0db8C8E1c0B;
+contract Charities is Ownable {
+    address public EBENAddress;
+    mapping(address => bool) public whitelist;
     mapping(address => uint256 ) public getTotalDonation;
     mapping(address => mapping(address => uint256)) public getTotalDonationByCharity;
+
     event donated(address indexed user, address indexed charity, uint256 amount);
 
-    modifier onlyOwner() {
-        require(msg.sender == owner, "Not owner");
-        _;
+    bool private initialized = false;
+    function initialize(address newOwner) external {
+        require(newOwner != address(0) && !initialized);
+        _transferOwnership(newOwner);
+        EBENAddress = 0x77CB87b57F54667978Eb1B199b28a0db8C8E1c0B;
+        initialized = true;
     }
 
-    constructor(){
-        owner=msg.sender;
+    function version() external pure returns(uint256){
+        return 2;
     }
       
 
-    function donate(uint256 amount,address charity) external{
-        require(isWhitelist(charity),"Not whitelist");
+    function donate(address charity, uint256 amount) external {
+        require(amount>0,"Amount is zero");
+        require(whitelist[charity],"Not whitelisted");
         getTotalDonation[msg.sender]+=amount;
         getTotalDonationByCharity[msg.sender][charity]+=amount;
         IBEP20 EBENContract=IBEP20(EBENAddress);
@@ -124,33 +130,13 @@ contract Charities {
 
     function addWhitelist(address[] memory addressList) external onlyOwner{
         for(uint256 i=0;i<addressList.length;i++){
-            address addr=addressList[i];
-            if(!isWhitelist(addr)){
-               whitelist.push(addr);
-            }
+            whitelist[addressList[i]] = true;
         }
     }
 
     function removeFromWhitelist(address[] memory addressList) external onlyOwner{
         for(uint256 i=0;i<addressList.length;i++){
-            address addr=addressList[i];
-
-            for(uint256 j=0;j<whitelist.length;j++){
-                if(whitelist[j]==addr){
-                   whitelist[j]= whitelist[whitelist.length-1];
-                   whitelist.pop();
-                   break;
-                }
-            }
+            whitelist[addressList[i]] = false;
         }
-    }
-
-    function isWhitelist(address user) public view returns(bool){
-        for(uint256 i=0;i<whitelist.length;i++){
-            if(whitelist[i]==user){
-              return true;
-            }
-        }
-        return false;
     }
 }
