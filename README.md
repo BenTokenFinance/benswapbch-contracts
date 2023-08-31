@@ -67,6 +67,7 @@
 (NFTFactorySingle): v0.8.7+commit.c7e474f2 <br/>
 (TokenBurnerV1): v0.8.18+commit.87f61d96 <br/>
 (EBENGovernanceUpgradable): v0.8.18+commit.87f61d96 <br/>
+(CharitiesUpgradable): v0.8.18+commit.87f61d96 <br/>
 <br/>
 <h3>Deployed Contracts on smartBCH Mainnet:</h3>
 Wrapped BCH: 0x3743eC0673453E5009310C727Ba4eaF7b3a1cc04 <br/>
@@ -184,6 +185,8 @@ BenSwap Tweet (UpdatableErc721WithUnlimitedSuppy01): 0x9F8211193b71BF602417f482c
 TokenBurnerV1: 0x71D9C349e35f73B782022d912B5dADa4235fDa06 <br/>
 EBENGovernanceUpgradable {Proxy}: 0x40ea6ca4f670efFeDC269cD01d49e57e481206FC<br/>
 EBENGovernanceUpgradable {Imp - Version 2}: 0x6297B5C30dbd0fF608E1aAB547B5406E47127Db4<br/>
+CharitiesUpgradable {Proxy}: 0x3e755F66dC5EC7eeCDD981ed626ECB17c7a5D235<br/>
+CharitiesUpgradable {Imp - Version 2}: 0x15bD7D5b43AA352E8f1B486e7b2Bd80b5b76E5F4<br/>
 <br/>
 <h3>Deployed Contracts on smartBCH Amber Testnet:</h3>
 LP Factory: 0x769e1fdbA5d0e397F34fD9d9B49F3d83F543DD02<br/>
