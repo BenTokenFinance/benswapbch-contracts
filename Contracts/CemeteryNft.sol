@@ -10,103 +10,7 @@ import "@openzeppelin/contracts/utils/Counters.sol";
 import "@openzeppelin/contracts/utils/Strings.sol"; 
 
 
-
-
-pragma solidity ^0.8.4;
-interface IBEP20 {
-    /**
-     * @dev Returns the amount of tokens in existence.
-     */
-    function totalSupply() external view returns (uint256);
-
-    /**
-     * @dev Returns the token decimals.
-     */
-    function decimals() external view returns (uint8);
-
-    /**
-     * @dev Returns the token symbol.
-     */
-    function symbol() external view returns (string memory);
-
-    /**
-     * @dev Returns the token name.
-     */
-    function name() external view returns (string memory);
-
-    /**
-     * @dev Returns the bep token owner.
-     */
-    function getOwner() external view returns (address);
-
-    /**
-     * @dev Returns the amount of tokens owned by `account`.
-     */
-    function balanceOf(address account) external view returns (uint256);
-
-    /**
-     * @dev Moves `amount` tokens from the caller's account to `recipient`.
-     *
-     * Returns a boolean value indicating whether the operation succeeded.
-     *
-     * Emits a {Transfer} event.
-     */
-    function transfer(address recipient, uint256 amount) external returns (bool);
-
-    /**
-     * @dev Returns the remaining number of tokens that `spender` will be
-     * allowed to spend on behalf of `owner` through {transferFrom}. This is
-     * zero by default.
-     *
-     * This value changes when {approve} or {transferFrom} are called.
-     */
-    function allowance(address _owner, address spender) external view returns (uint256);
-
-    /**
-     * @dev Sets `amount` as the allowance of `spender` over the caller's tokens.
-     *
-     * Returns a boolean value indicating whether the operation succeeded.
-     *
-     * IMPORTANT: Beware that changing an allowance with this method brings the risk
-     * that someone may use both the old and the new allowance by unfortunate
-     * transaction ordering. One possible solution to mitigate this race
-     * condition is to first reduce the spender's allowance to 0 and set the
-     * desired value afterwards:
-     * https://github.com/ethereum/EIPs/issues/20#issuecomment-263524729
-     *
-     * Emits an {Approval} event.
-     */
-    function approve(address spender, uint256 amount) external returns (bool);
-
-    /**
-     * @dev Moves `amount` tokens from `sender` to `recipient` using the
-     * allowance mechanism. `amount` is then deducted from the caller's
-     * allowance.
-     *
-     * Returns a boolean value indicating whether the operation succeeded.
-     *
-     * Emits a {Transfer} event.
-     */
-    function transferFrom(address sender, address recipient, uint256 amount) external returns (bool);
-
-    /**
-     * @dev Emitted when `value` tokens are moved from one account (`from`) to
-     * another (`to`).
-     *
-     * Note that `value` may be zero.
-     */
-    event Transfer(address indexed from, address indexed to, uint256 value);
-
-    /**
-     * @dev Emitted when the allowance of a `spender` for an `owner` is set by
-     * a call to {approve}. `value` is the new allowance.
-     */
-    event Approval(address indexed owner, address indexed spender, uint256 value);
-}
-
-
-
-contract NFTFactorySingle is ERC721,Ownable,ERC721Enumerable {
+contract CemeteryNft is ERC721,Ownable,ERC721Enumerable {
     using Counters for Counters.Counter;
     using Strings for uint256;
     using SafeERC20 for ERC20;
@@ -132,10 +36,10 @@ contract NFTFactorySingle is ERC721,Ownable,ERC721Enumerable {
 
 
 
+
     struct MemorialNftInfo {
         string name;
         uint256 deathDate;
-
         address engraver;
         string hometown;
         string epitaph;
@@ -143,30 +47,24 @@ contract NFTFactorySingle is ERC721,Ownable,ERC721Enumerable {
         string image;
         string externalUrl;
     } 
-    // struct NftInfo { 
-    //     string name;
-    //     string description;
-    //     string image;
-    //     string externalUrl;
-    //     string attributes;
-    // }
-
     mapping(uint256 => address) public getCreator;
     mapping(uint256 => MemorialNftInfo) public getMemorialNftInfo;
-    mapping(uint256 => mapping(uint256 => uint256)) public getGiftInfo;
-
+    mapping(uint256 => mapping(uint256 => uint256)) public getNftGiftInfo;
 
     event condolence(address indexed user, uint256 indexed tokenId,uint256 giftType,uint256 number);
     event NftMinted(address indexed user, uint256 indexed tokenId, string  name, uint256 deathDate, address engraver, string hometown, string epitaph,  string  img, string  extUrl);
    
-   
-    // event NftMinted(address indexed user, uint256 indexed tokenId, string name, string description, string image, string externalUrl, string attributes);
+
+    // gift sol
+    mapping(uint256 => uint256) public giftCost;
+    mapping(address => mapping(uint256=>uint256)) public getGiftRecord;
+    event buyInfo(address indexed user, uint256  giftType,uint256 nums,uint256 cost);
+
     constructor(string memory name_, string memory symbol_, string memory uri_, ERC20 feeToken_, address feeTo_, uint256 creationFee_) ERC721(name_, symbol_) {
         _uri = uri_;
         feeToken = feeToken_;
         feeTo = feeTo_;
         creationFee = creationFee_;
-        
         _tokenIdCounter.increment();   // skip 0
     }
 
@@ -178,14 +76,12 @@ contract NFTFactorySingle is ERC721,Ownable,ERC721Enumerable {
         _uri = newuri;
     }
 
- 
+
 
     // Cemetery  Nft
     function safeMint(MemorialNftInfo memory params) public returns(uint256) {
-        // string memory na, uint256 deathDate, address engraver, string memory hometown, string memory epitaph,  string memory img, string memory extUrl
-        
-        uint256 tokenId = _tokenIdCounter.current();
 
+        uint256 tokenId = _tokenIdCounter.current();
         getCreator[tokenId] = msg.sender;
         getMemorialNftInfo[tokenId] = params;
         
@@ -197,49 +93,41 @@ contract NFTFactorySingle is ERC721,Ownable,ERC721Enumerable {
         emit NftMinted(msg.sender, tokenId, params.name, params.deathDate, params.engraver, params.hometown, params.epitaph, params.image, params.externalUrl);
         return tokenId;
     }
+    // Gift giving
     function giveCondolence(uint256 tokenId,uint256 giftType,uint256 amount) public {
         require(_exists(tokenId), "Token does not exist");
-        require(giftType <= 3, "Invalid gift type");
-        require(getGiftRecord[msg.sender][giftType]>0, "Invalid quantity");
-        require(getGiftRecord[msg.sender][giftType]>amount, "quantity not sufficient");
+        require(giftCost[giftType]>0, "Invalid gift type");
+        require(amount>0, "Invalid amount");
+        require(getGiftRecord[msg.sender][giftType]>0&&getGiftRecord[msg.sender][giftType]>=amount, "quantity not sufficient");
 
 
-        getGiftInfo[tokenId][giftType]+=amount;
+        getNftGiftInfo[tokenId][giftType]+=amount;
         getGiftRecord[msg.sender][giftType]-=amount;
         emit condolence(msg.sender,tokenId,giftType,amount);
     }
 
-
-
-    // gift sol
-    address public EBENAddress;
-    mapping(uint256 => uint256) public giftCost;
-    mapping(address => mapping(uint256=>uint256)) public getGiftRecord;
-    event buyInfo(address indexed user, uint256  giftType,uint256 nums,uint256 cost);
-
+    // Gift buying
     function buyGifts(uint256 giftType,uint256 amount) external {
              require(giftCost[giftType]>0,"The gift does not exist");
              require(amount>0,"Invalid quantity");
-             uint256 tokenAmount=(amount*giftCost[giftType])*10**18;
-            
+             ERC20 tokenContract=ERC20(feeToken);
+             uint256 tokenDecimals=tokenContract.decimals();
+
+             uint256 tokenAmount=(amount*giftCost[giftType])*(10**tokenDecimals);
              getGiftRecord[msg.sender][giftType]+=amount;
-             IBEP20 EBENContract=IBEP20(EBENAddress);
-             EBENContract.transferFrom(msg.sender,owner(),tokenAmount);
+             tokenContract.transferFrom(msg.sender,feeTo,tokenAmount);
              emit buyInfo(msg.sender,giftType,amount,tokenAmount);
     }
-
+    // Set Gift cost
     function setGiftCost(uint256[] memory costs) external onlyOwner {
               for(uint256 i=0;i<costs.length;i++){
                  this._setGiftCost(i,costs[i]);
               }
     }
-   
     function _setGiftCost(uint256 giftType,uint256 cost) external onlyOwner {
              giftCost[giftType]=cost;
     }
     
-
-
 
 
     function tokenURI(uint256 tokenId) public view virtual override returns (string memory) {
