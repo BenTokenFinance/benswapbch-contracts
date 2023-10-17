@@ -92,6 +92,7 @@ contract CemeteryController is Ownable {
 
     // Send Gift
     function sendGift(uint256 tokenId, uint256 typeId, uint256 quantity) external {
+        require(tokenId > 0, 'NFT does not exist!');
         require(tokenId <= nft.totalSupply(), 'NFT does not exist!');
         require(getGiftPrice[typeId] > 0, 'Gift does not exist!');
         require(quantity <= 10000, 'Too many!');
