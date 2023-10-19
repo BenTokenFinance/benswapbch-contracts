@@ -20,6 +20,10 @@ interface IPokeBenItem {
     function safeMint(address to, uint256 _source, uint256 _kind, string memory _data) external returns(uint256);
 }
 
+interface IPokeBenHero {
+    function safeMint(address to) external returns(uint256);
+}
+
 contract PokeBenShop is Ownable {
     using SafeERC20 for IERC20;
 
@@ -31,7 +35,7 @@ contract PokeBenShop is Ownable {
     }
 
     function version() external pure returns(uint256){
-        return 1;
+        return 2;
     }
 
     address public feeTo;
@@ -129,5 +133,15 @@ contract PokeBenShop is Ownable {
 
         emit PokeBenItemBought(address(msg.sender), itemId, price);
         return itemId;
+    }
+
+    event PokeBenHeroBought(address indexed user, uint256 heroId, uint256 price);
+    function buyPokeBenHero() external returns(uint256) {
+        uint256 price = 10000 * 1e18;
+        pokebencrystal.safeTransferFrom(address(msg.sender), feeTo, price);
+        uint256 heroId = IPokeBenHero(0x014da337dd4e097935797602332a4649c3F436c1).safeMint(address(msg.sender));
+
+        emit PokeBenHeroBought(address(msg.sender), heroId, price);
+        return heroId;
     }
 }

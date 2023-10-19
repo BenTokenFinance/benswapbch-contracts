@@ -134,6 +134,7 @@ PokéBenMultipurposeExtension {Proxy}: 0xc84d10135275bf3dDc713D7fAe9Dd811517c283
 PokéBenMultipurposeExtension {Imp - Version 1}: 0xA5892D9EB9415073B1Cf766b1B122D2b0EEd0FB4 <br/>
 PokéBenShop {Proxy}: 0x159f884d87cE296a09BBA33Ff297B315Ad509581<br/>
 PokéBenShop {Imp - Version 1}: 0xa704F4477B648EA14EF483A09c57c09767bc2F6B<br/>
+PokéBenShop {Imp - Version 2}: 0x0f83C7d730C44E7b9c00dA18513E60F0264c074D<br/>
 PokéBenAdventure {Imp - Version 1}: 0x334beb3d2091211ac1d18d34F0349A0887189263<br/>
 PokéBenAdventureViridianForest {Proxy - PokéBenAdventure}: 0x97D4006Ae886B64ea710bCc80ddEFB6fcDBe0450<br/>
 PokéBenAdventureWellspringCave {Proxy - PokéBenAdventure}: 0x075b15A75240bCf0A23dbDf5EeA2f72c05fEC4FA<br/>
