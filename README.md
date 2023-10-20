@@ -68,6 +68,9 @@
 (TokenBurnerV1): v0.8.18+commit.87f61d96 <br/>
 (EBENGovernanceUpgradable): v0.8.18+commit.87f61d96 <br/>
 (CharitiesUpgradable): v0.8.18+commit.87f61d96 <br/>
+(PublicMintableToken01): v0.8.18+commit.87f61d96 <br/>
+(CemeteryNft): v0.8.18+commit.87f61d96 <br/>
+(CemeteryController): v0.8.18+commit.87f61d96 <br/>
 <br/>
 <h3>Deployed Contracts on smartBCH Mainnet:</h3>
 Wrapped BCH: 0x3743eC0673453E5009310C727Ba4eaF7b3a1cc04 <br/>
@@ -131,6 +134,7 @@ PokéBenMultipurposeExtension {Proxy}: 0xc84d10135275bf3dDc713D7fAe9Dd811517c283
 PokéBenMultipurposeExtension {Imp - Version 1}: 0xA5892D9EB9415073B1Cf766b1B122D2b0EEd0FB4 <br/>
 PokéBenShop {Proxy}: 0x159f884d87cE296a09BBA33Ff297B315Ad509581<br/>
 PokéBenShop {Imp - Version 1}: 0xa704F4477B648EA14EF483A09c57c09767bc2F6B<br/>
+PokéBenShop {Imp - Version 2}: 0x0f83C7d730C44E7b9c00dA18513E60F0264c074D<br/>
 PokéBenAdventure {Imp - Version 1}: 0x334beb3d2091211ac1d18d34F0349A0887189263<br/>
 PokéBenAdventureViridianForest {Proxy - PokéBenAdventure}: 0x97D4006Ae886B64ea710bCc80ddEFB6fcDBe0450<br/>
 PokéBenAdventureWellspringCave {Proxy - PokéBenAdventure}: 0x075b15A75240bCf0A23dbDf5EeA2f72c05fEC4FA<br/>
@@ -176,7 +180,7 @@ PokéBenHeroPartSetting: 0xd2c5574F96FD229dDde47d30903376e841C9c25b <br/>
 PokéBenHeroPartAppraiser {Proxy}: 0xD69D5Fe6c95ef8aF143f3070D1370C88e4BE7512 <br/>
 PokéBenHeroPartAppraiser {Imp - Version 1}: 0xef8BAfe51e207B51f2a7D8e22f6e9A30B22b053f <br/>
 PokéBenHeroBeautician {Proxy}: 0x108d5B2Eae269eBeB83a02a77E3da67CB7CD684d <br/>
-PokéBenHeroBeautician {Imp - Version 1}: 0xE936a1e1E07009A2BC6C2EB697BE040215A716Ba <br/>
+PokéBenHeroBeautician {Imp - Version 1}: 0x04cBD8Ab66713F860bc0dcE9203aB5D731D3Da30 <br/>
 FarmVoting: 0xc0E541a34B0E1c6fFf51b1780DE899873B6C81f7 <br/>
 Ben Token Finance 2022 Christmas Souvenirs (UpdatableErc721WithLimitSupply02): 0xA76F56fCDA929FfFAf5710AFebe5403B5b3018Bd <br/>
 Miscellaneous (NFTFactorySingle): 0xF8E0755544ED3133182085773213727Eb05258bd <br/>
