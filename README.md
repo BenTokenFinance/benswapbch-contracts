@@ -178,7 +178,7 @@ PokéBenAdventureRelicCastle {Proxy - PokéBenAdventure}: 0x328D69cEBD1744B83076
 PokéBenAdventureCelestialTower {Proxy - PokéBenAdventure}: 0xc083BDFA598308b07C49aa5Ffe7aA564553B4aC2<br/>
 PokéBenHeroPartSetting: 0xd2c5574F96FD229dDde47d30903376e841C9c25b <br/>
 PokéBenHeroPartAppraiser {Proxy}: 0xD69D5Fe6c95ef8aF143f3070D1370C88e4BE7512 <br/>
-PokéBenHeroPartAppraiser {Imp - Version 1}: 0xef8BAfe51e207B51f2a7D8e22f6e9A30B22b053f <br/>
+PokéBenHeroPartAppraiser {Imp - Version 1}: 0x8594cBF9BB8A15d6E329bC9Ce0a982d9651A2E3f <br/>
 PokéBenHeroBeautician {Proxy}: 0x108d5B2Eae269eBeB83a02a77E3da67CB7CD684d <br/>
 PokéBenHeroBeautician {Imp - Version 1}: 0x04cBD8Ab66713F860bc0dcE9203aB5D731D3Da30 <br/>
 FarmVoting: 0xc0E541a34B0E1c6fFf51b1780DE899873B6C81f7 <br/>
