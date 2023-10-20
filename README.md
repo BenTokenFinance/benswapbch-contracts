@@ -180,7 +180,7 @@ PokéBenHeroPartSetting: 0xd2c5574F96FD229dDde47d30903376e841C9c25b <br/>
 PokéBenHeroPartAppraiser {Proxy}: 0xD69D5Fe6c95ef8aF143f3070D1370C88e4BE7512 <br/>
 PokéBenHeroPartAppraiser {Imp - Version 1}: 0xef8BAfe51e207B51f2a7D8e22f6e9A30B22b053f <br/>
 PokéBenHeroBeautician {Proxy}: 0x108d5B2Eae269eBeB83a02a77E3da67CB7CD684d <br/>
-PokéBenHeroBeautician {Imp - Version 1}: 0xE936a1e1E07009A2BC6C2EB697BE040215A716Ba <br/>
+PokéBenHeroBeautician {Imp - Version 1}: 0x04cBD8Ab66713F860bc0dcE9203aB5D731D3Da30 <br/>
 FarmVoting: 0xc0E541a34B0E1c6fFf51b1780DE899873B6C81f7 <br/>
 Ben Token Finance 2022 Christmas Souvenirs (UpdatableErc721WithLimitSupply02): 0xA76F56fCDA929FfFAf5710AFebe5403B5b3018Bd <br/>
 Miscellaneous (NFTFactorySingle): 0xF8E0755544ED3133182085773213727Eb05258bd <br/>
