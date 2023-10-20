@@ -87,7 +87,7 @@ contract PokeBenHeroBeautician is Ownable {
         require(heroPartId>0, "Item is not hero part!");
         require(bytes(data).length>0, "Item has not been appraised!");
 
-        feeToken.safeTransferFrom(address(msg.sender), address(this), fee);
+        feeToken.safeTransferFrom(address(msg.sender), feeTo, fee);
 
         pokebenitem.burn(itemId);
 
