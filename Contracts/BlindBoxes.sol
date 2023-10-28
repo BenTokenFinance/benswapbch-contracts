@@ -179,7 +179,7 @@ contract BlindBoxes is ERC721, ERC721Enumerable, Ownable {
         require(tokenIds.length == 10, "Wrong cards!");
         for(uint i=0; i<10; i++) {
             require(ownerOf(tokenIds[i])==msg.sender, "Not owner!");
-            require(getCardType[tokenIds[i]]==i, "Wrong card type!");
+            require(getCardType[tokenIds[i]]==i+1, "Wrong card type!");
             require(!isClaimed[tokenIds[i]], "Already claimed!");
 
             isClaimed[tokenIds[i]] = true;
