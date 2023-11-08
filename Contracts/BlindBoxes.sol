@@ -73,7 +73,7 @@ contract BlindBoxes is ERC721, ERC721Enumerable, Ownable {
     }
 
     function shuffledPosToCardType(uint i) internal pure returns (uint8) {
-        if(i < 14) return uint8(0x44444333332211>>(i*8));
+        if(i < 14) return uint8(0xf&(0x44444333332211>>(i*4))); 
         return uint8((i-14)/31 + 5);
     }
 
