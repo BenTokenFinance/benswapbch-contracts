@@ -23,7 +23,7 @@ contract CemeteryController is Ownable {
         _transferOwnership(newOwner);
         initialized = true;
 
-        nft = CemeteryNft(0x4F922dC14d4a6967D6A808F4e8c6651F017883F3);
+        nft = CemeteryNft(0x850C860C9288Cd4e8bfcEff46ebCA4E358563d91);
 
         feeToken = ERC20(0x77CB87b57F54667978Eb1B199b28a0db8C8E1c0B);
         feeTo = 0x71D9C349e35f73B782022d912B5dADa4235fDa06;
