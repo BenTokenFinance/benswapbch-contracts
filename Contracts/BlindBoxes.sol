@@ -194,7 +194,7 @@ contract BlindBoxes is ERC721, ERC721Enumerable, Ownable {
 
     function status() external view returns(uint256) {
         if (counter <= MaxSupply) return 1;    // Selling
-        if (randomSeedForClaim > 0) return 2;    // Awaiting offsetPairs
+        if (randomSeedForClaim <= 0) return 2;    // Awaiting offsetPairs
         if (claimCount < 2) return 3;   // Claiming
         return 4;   // All claimed
     }
