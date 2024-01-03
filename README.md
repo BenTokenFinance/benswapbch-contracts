@@ -130,6 +130,7 @@ PokéBenAbilityTrainingRoomUpgradable {Imp - Version 2}: 0x35032203cAb203f05d46B
 PokéBenEvoluterV1: 0x201fA5675EF8b87662066F802f7cACE876102297<br/>
 PokéBenPvpExtension {Proxy}: 0xEb04747bceA46eBD61D441389D0147c279BC3E5f<br/>
 PokéBenPvpExtension {Imp - Version 1}: 0xB0069F1b176C4054D520F24EB96069d547e5682a<br/>
+PokéBenPvpExtension {Imp - Version 2}: 0x94c92eD4a2e9385D890Cc5aEd46C3D4BCDDE9d45<br/>
 PokéBenTeamExtension {Proxy}: 0x481E2ab61868F6a8DBe49b386a1fcE17E1Cd2B23<br/>
 PokéBenTeamExtension {Imp - Version 1}: 0xB069EAc882b48250b390D6D156c7566cD038EC6b<br/>
 PokéBenTeamExtension {Imp - Version 2}: 0xE349Da79a99557894a93832FF048BcA2e0762298<br/>

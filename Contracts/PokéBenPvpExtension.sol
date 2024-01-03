@@ -1,12 +1,18 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.4;
 
-import "@openzeppelin/contracts/access/Ownable.sol";
-import "@openzeppelin/contracts/proxy/transparent/TransparentUpgradeableProxy.sol";
+import "https://raw.githubusercontent.com/OpenZeppelin/openzeppelin-contracts/release-v4.4/contracts/access/Ownable.sol";
+import "https://raw.githubusercontent.com/OpenZeppelin/openzeppelin-contracts/release-v4.4/contracts/proxy/transparent/TransparentUpgradeableProxy.sol";
 
 interface IPokeBen {
     function ownerOf(uint256 tokenId) external view returns(address);
     function getPokeBenInfo(uint256 tokenId) external view returns(uint256,uint256,uint256,uint256,uint256);
+}
+
+interface IPokeBenHero {
+    function ownerOf(uint256 tokenId) external view returns(address);
+    function getHeroParts(uint256 tokenId, uint256 maxParts) external view returns (uint256[] memory);
+    function getHeroStats(uint256 tokenId, uint256 maxStats) external view returns (string[] memory);
 }
 
 interface IPokeBenAbilityExtension {
@@ -20,7 +26,7 @@ interface IPokeBenNftNameExtension {
 interface IPokeBenTeamExtension {
     function getName(address owner) external view returns(string memory);
     function getStatus(address owner) external view returns(string memory);
-    function getTeam(address owner) external view returns(uint256[] memory);
+    function getHeroAndTeam(address owner) external view returns(uint256, uint256[] memory);
     function getTeamIdByUser(address owner) external view returns(uint256);
 }
 
@@ -33,7 +39,7 @@ contract PokeBenPvpExtension is Ownable {
     }
 
     function version() external pure returns(uint256){
-        return 1;
+        return 2;
     }
 
     IPokeBen pb;
@@ -57,6 +63,9 @@ contract PokeBenPvpExtension is Ownable {
         string name;
         string status;
         PokeBenPvpInfo[] team;
+        uint256 heroId;
+        uint256[] heroParts;
+        string[] heroStats;
     }
 
     function setPokeBenAbilityExtension(address _pbae) external onlyOwner {
@@ -96,10 +105,17 @@ contract PokeBenPvpExtension is Ownable {
         string memory name = pbte.getName(user);
         string memory status = pbte.getStatus(user);
         uint256 teamId = pbte.getTeamIdByUser(user);
-        uint256[] memory tokenIds = pbte.getTeam(user);
+        (uint256 heroId, uint256[] memory tokenIds) = pbte.getHeroAndTeam(user);
         PokeBenPvpInfo[] memory team = getPvpInfosByIds(tokenIds);
 
-        return PokeBenPvpTeam({name:name, status:status, team: team, user: user, teamId: teamId});
+        if (heroId > 0) {
+            uint256[] memory heroParts = pbh.getHeroParts(heroId, 7);
+            string[] memory heroStats = pbh.getHeroStats(heroId, 7);
+
+            return PokeBenPvpTeam({name:name, status:status, team: team, user: user, teamId: teamId, heroId: heroId, heroParts: heroParts, heroStats: heroStats});
+        }
+
+        return PokeBenPvpTeam({name:name, status:status, team: team, user: user, teamId: teamId, heroId: heroId, heroParts: new uint[](0), heroStats: new string[](0)});
     }
 
     function getTeamsByUsers(address[] memory users) public view returns(PokeBenPvpTeam[] memory teams) {
@@ -120,5 +136,11 @@ contract PokeBenPvpExtension is Ownable {
         height = block.number;
         timestamp = block.timestamp;
         teams = getTeamsByUsers(users);
+    }
+
+    // Version 2
+    IPokeBenHero pbh;
+    function setPokeBenHero(address _pbh) external onlyOwner {
+        pbh = IPokeBenHero(_pbh);
     }
 }
