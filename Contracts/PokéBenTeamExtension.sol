@@ -1,13 +1,10 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.4;
 
-import "@openzeppelin/contracts/access/Ownable.sol";
-import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
-import "@openzeppelin/contracts/proxy/transparent/TransparentUpgradeableProxy.sol";
+import "https://raw.githubusercontent.com/OpenZeppelin/openzeppelin-contracts/release-v4.4/contracts/access/Ownable.sol";
+import "https://raw.githubusercontent.com/OpenZeppelin/openzeppelin-contracts/release-v4.4/contracts/token/ERC721/ERC721.sol";
+import "https://raw.githubusercontent.com/OpenZeppelin/openzeppelin-contracts/release-v4.4/contracts/proxy/transparent/TransparentUpgradeableProxy.sol";
 
-interface IPokeBen {
-    function ownerOf(uint256 tokenId) external view returns(address);
-}
 
 contract PokeBenTeamExtension is Ownable {
     bool private initialized = false;
@@ -17,8 +14,8 @@ contract PokeBenTeamExtension is Ownable {
         initialized = true;
     }
 
-    function version() external pure returns(uint256){
-        return 1;
+    function version() external pure returns(uint256) {
+        return 2;
     }
 
     ERC721 public pokeben;
@@ -56,7 +53,7 @@ contract PokeBenTeamExtension is Ownable {
         }
     }
 
-    function getTeam(address owner) external view returns(uint256[] memory){
+    function getTeam(address owner) public view returns(uint256[] memory){
         uint256[] memory team = _getTeam[owner];
         uint256 count = 0;
         uint256[] memory valid = new uint256[](team.length);
@@ -148,5 +145,18 @@ contract PokeBenTeamExtension is Ownable {
         _status(msg.sender, status);
         _team(msg.sender, team);
         _hero(msg.sender, heroId);
+    }
+
+    // Version 2
+    function getHeroAndTeam(address owner) external view returns(uint256 heroId, uint256[] memory team){
+        if (getHero[owner] > 0) {
+            try hero.ownerOf(getHero[owner]) returns (address o) {
+                if (o == owner) {
+                    heroId = getHero[owner];
+                }
+            } catch (bytes memory /*lowLevelData*/) { }
+        }
+
+        team = getTeam(owner);
     }
 }
