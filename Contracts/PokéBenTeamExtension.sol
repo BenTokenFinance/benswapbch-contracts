@@ -106,7 +106,7 @@ contract PokeBenTeamExtension is Ownable {
     }
 
     function _hero(address user, uint256 tokenId) private {
-        require(hero.ownerOf(tokenId)==user, 'Not Owner!');
+        require(tokenId == 0 || hero.ownerOf(tokenId)==user, 'Not Owner!');
 
         getHero[user] = tokenId;
         emit HeroChanged(user, tokenId);

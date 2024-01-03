@@ -133,7 +133,7 @@ PokéBenPvpExtension {Imp - Version 1}: 0xB0069F1b176C4054D520F24EB96069d547e568
 PokéBenPvpExtension {Imp - Version 2}: 0x94c92eD4a2e9385D890Cc5aEd46C3D4BCDDE9d45<br/>
 PokéBenTeamExtension {Proxy}: 0x481E2ab61868F6a8DBe49b386a1fcE17E1Cd2B23<br/>
 PokéBenTeamExtension {Imp - Version 1}: 0xB069EAc882b48250b390D6D156c7566cD038EC6b<br/>
-PokéBenTeamExtension {Imp - Version 2}: 0xE349Da79a99557894a93832FF048BcA2e0762298<br/>
+PokéBenTeamExtension {Imp - Version 2}: 0xc093412205c564705A2d09797462bACfA8d2e41b<br/>
 PokéBenMultipurposeExtension {Proxy}: 0xc84d10135275bf3dDc713D7fAe9Dd811517c2830 <br/>
 PokéBenMultipurposeExtension {Imp - Version 1}: 0xA5892D9EB9415073B1Cf766b1B122D2b0EEd0FB4 <br/>
 PokéBenShop {Proxy}: 0x159f884d87cE296a09BBA33Ff297B315Ad509581<br/>
