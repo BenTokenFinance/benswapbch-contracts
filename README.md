@@ -72,6 +72,7 @@
 (PublicMintableToken01): v0.8.18+commit.87f61d96 <br/>
 (CemeteryNft): v0.8.18+commit.87f61d96 <br/>
 (CemeteryController): v0.8.18+commit.87f61d96 <br/>
+(BlindBoxes): v0.8.18+commit.87f61d96 <br/>
 <br/>
 <h3>Deployed Contracts on smartBCH Mainnet:</h3>
 Wrapped BCH: 0x3743eC0673453E5009310C727Ba4eaF7b3a1cc04 <br/>
