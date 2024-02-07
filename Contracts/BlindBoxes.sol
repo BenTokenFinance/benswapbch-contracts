@@ -166,7 +166,7 @@ contract BlindBoxes is ERC721, ERC721Enumerable, Ownable {
         return x;
     }
 
-    function openBox(uint256 tokenId) external returns(uint256) {
+    function openBox(uint256 tokenId) public returns(uint256) {
         require(randomSeedForClaim > 0, "Not ready!");
         require(ownerOf(tokenId)==msg.sender, "Not owner!");
         require(getCardType[tokenId]==0, "Already opened!");
@@ -174,6 +174,16 @@ contract BlindBoxes is ERC721, ERC721Enumerable, Ownable {
         uint256 cardType = shuffledPosToCardType(shuffle_pos(tokenId, MaxSupply));
         getCardType[tokenId] = cardType;
         return cardType;
+    }
+
+    function openBoxes(uint256[] calldata tokenIds) external returns(uint256[] memory) {
+        uint256[] memory cardTypes = new uint256[](tokenIds.length);
+
+        for (uint i=0; i<tokenIds.length; i++) {
+            cardTypes[i] = openBox(tokenIds[i]);
+        }
+
+        return cardTypes;
     }
 
     function claim(uint256[] calldata tokenIds) external {
