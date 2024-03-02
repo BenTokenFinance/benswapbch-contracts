@@ -46,7 +46,7 @@ contract BlindBoxes is ERC721Enumerable, Ownable {
     uint256 public constant MaxSupply = 200;
     uint256 public constant Price = 99 * 1e18;
     uint256 public constant Reward = 8888 * 1e18;
-    address private constant VrfSigner = 0x18C51aa3d1F018814716eC2c7C41A20d4FAf023C;
+    address private constant VrfSigner = 0x19Ac81dFE73238699550EfEdB792D5e14f683849;
     string constant private PREFIX = "\x19Ethereum Signed Message:\n40";
 
     uint64 public claimCount = 0; 
@@ -122,7 +122,7 @@ contract BlindBoxes is ERC721Enumerable, Ownable {
         require(randomSeedForClaim > 0, "Not ready!");
         require(ownerOf(tokenId)==msg.sender, "Not owner!");
         uint oldMask = openedBoxMask;
-        uint newMask = oldMask&(1<<tokenId);
+        uint newMask = oldMask|(1<<tokenId);
         require(oldMask!=newMask, "Already opened!");
         openedBoxMask = newMask;
 
