@@ -1,7 +1,7 @@
 # benswapbch-contracts
 
 <h3>Solidity Compiler:</h3>
-(Wrapped BCH): v0.4.18+commit.9cf6e910 <br/>
+(WBCH): v0.4.18+commit.9cf6e910 <br/>
 (Multicall): v0.6.10+commit.00c0fcaf   (optimization enabled with 999999 runs)<br/>
 (LP Factory): v0.5.16+commit.9c3226ce<br/>
 (AMM Router): v0.6.6+commit.6c089d02   (optimization enabled with 200 runs)<br/>
@@ -75,7 +75,7 @@
 (BlindBoxes): v0.8.18+commit.87f61d96 <br/>
 <br/>
 <h3>Deployed Contracts on smartBCH Mainnet:</h3>
-Wrapped BCH: 0x3743eC0673453E5009310C727Ba4eaF7b3a1cc04 <br/>
+WBCH: 0x3743eC0673453E5009310C727Ba4eaF7b3a1cc04 <br/>
 Multicall: 0x1b38EBAd553f218e2962Cb1C0539Abb5d6A37774<br/>
 LP Factory: 0x8d973bAD782c1FFfd8FcC9d7579542BA7Dd0998D<br/>
 AMM Router: 0x0c1Cb50D5eEd1beA4b4dD62B6368C0CA63AbaC11<br/>
