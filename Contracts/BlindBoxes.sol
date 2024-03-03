@@ -126,6 +126,8 @@ contract BlindBoxes is ERC721Enumerable, Ownable {
         require(oldMask!=newMask, "Already opened!");
         openedBoxMask = newMask;
 
+        emit Opened(msg.sender, tokenId, _getCardType(tokenId));
+
         return _getCardType(tokenId);
     }
 
