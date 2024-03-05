@@ -46,7 +46,7 @@ contract BlindBoxes is ERC721Enumerable, Ownable {
     uint256 public constant MaxSupply = 200;
     uint256 public constant Price = 99 * 1e18;
     uint256 public constant Reward = 8888 * 1e18;
-    address private constant VrfSigner = 0x19Ac81dFE73238699550EfEdB792D5e14f683849;
+    address private constant VrfSigner = 0x12091e0f36Da723738288d98a7DbFD8fC804878F;
     string constant private PREFIX = "\x19Ethereum Signed Message:\n40";
 
     uint64 public claimCount = 0; 
