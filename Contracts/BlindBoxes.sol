@@ -67,8 +67,8 @@ contract BlindBoxes is ERC721Enumerable, Ownable {
     }
 
     function getCardType(uint tokenId) public view returns (uint) {
-	if((openedBoxMask&(1<<tokenId))==0) return 0;
-	return _getCardType(tokenId);
+        if((openedBoxMask&(1<<tokenId))==0) return 0;
+        return _getCardType(tokenId);
     }
 
     function _getCardType(uint tokenId) internal view returns (uint) {
