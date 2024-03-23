@@ -46,7 +46,7 @@ contract BlindBoxes is ERC721Enumerable, Ownable {
     uint256 public constant MaxSupply = 200;
     uint256 public constant Price = 99 * 1e18;
     uint256 public constant Reward = 8888 * 1e18;
-    address private constant VrfSigner = 0x12091e0f36Da723738288d98a7DbFD8fC804878F;
+    address private constant VrfSigner = 0xA5D7A78Fa014734d982D3461c21853c3D739cC1e;
     string constant private PREFIX = "\x19Ethereum Signed Message:\n40";
 
     uint64 public claimCount = 0; 
@@ -67,8 +67,8 @@ contract BlindBoxes is ERC721Enumerable, Ownable {
     }
 
     function getCardType(uint tokenId) public view returns (uint) {
-        if((openedBoxMask&(1<<tokenId))==0) return 0;
-        return _getCardType(tokenId);
+	if((openedBoxMask&(1<<tokenId))==0) return 0;
+	return _getCardType(tokenId);
     }
 
     function _getCardType(uint tokenId) internal view returns (uint) {
