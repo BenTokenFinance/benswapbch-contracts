@@ -906,7 +906,7 @@ contract AddRaisingTokensToLiquidityAndSnedIboV2Concluder is IIboV2Concluder {
     }
 
     constructor() public {
-        _name = "AddingRaisingTokensToLiquidityAndSned";
+        _name = "AddingRaisingTokensToLiquidityAndSend";
         _template = msg.sender;
         _status = 0;
         _isInitialized = false;
