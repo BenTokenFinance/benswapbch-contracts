@@ -103,6 +103,7 @@ IBO v2 Conclusion Strategy - Time-Lock Remaining Offering Tokens: 0x9B91e9d6Fe83
 IBO v2 Conclusion Strategy - Time-Lock Raised Tokens: 0x3c71f8DBcf49F793f381787119E9E33B6eaa5DE6<br/>
 IBO v2 Conclusion Strategy - Adding Raised Tokens to Liquidity and Lock: 0xa230368E7F85c35d0195728e149e1d80D7858995<br/>
 IBO v2 Conclusion Strategy - Sending Remaining Offering Tokens to the Strategy for Raised Tokens: 0x18f08fdE3d616f5DeaF8b37d6abF25F5386732bB<br/>
+IBO v2 Conclusion Strategy - Adding Raised Tokens to Liquidity and Send: 0x7303A4f8e9B1abCa1eC4A81382A9D9F125c7a155<br/>
 DAO Helper v1: 0x61EF60961230a9a84bc911fFc76302dCb435dB91<br/>
 EBEN Governance v1 (Deprecated): 0x5dfE639272131B6f8157b5716c6fD74f8C5a13a2<br/>
 Candy House: 0xe81E059d7Dd6B0b99c6b3344325D9AbC92E7f2e3<br/>
