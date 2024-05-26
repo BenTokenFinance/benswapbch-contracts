@@ -201,6 +201,7 @@ CharitiesUpgradable {Imp - Version 2}: 0x15bD7D5b43AA352E8f1B486e7b2Bd80b5b76E5F
 BenSwap Graves (CemeteryNft): 0x850C860C9288Cd4e8bfcEff46ebCA4E358563d91<br/>
 CemeteryController {Proxy}: 0x01cE3fc62d76C30B5Db96C2d70354B84df29df5E<br/>
 CemeteryController {Imp - Version 1}: 0x42F4A2c72b9Ed5e620E8DcA04e4f3bB433DD84e0<br/>
+CemeteryController {Imp - Version 2}: 0xca6d7cea931F7a610794B5b968d9623EA441C566<br/>
 <br/>
 <h3>Deployed Contracts on smartBCH Amber Testnet:</h3>
 LP Factory: 0x769e1fdbA5d0e397F34fD9d9B49F3d83F543DD02<br/>

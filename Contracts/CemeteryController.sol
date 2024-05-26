@@ -1,11 +1,11 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.4;
 
-import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
-import "@openzeppelin/contracts/token/ERC20/utils/SafeERC20.sol";
-import "@openzeppelin/contracts/access/Ownable.sol";
-import "@openzeppelin/contracts/utils/Strings.sol"; 
-import "@openzeppelin/contracts/proxy/transparent/TransparentUpgradeableProxy.sol";
+import "https://raw.githubusercontent.com/OpenZeppelin/openzeppelin-contracts/release-v4.4/contracts/token/ERC20/ERC20.sol";
+import "https://raw.githubusercontent.com/OpenZeppelin/openzeppelin-contracts/release-v4.4/contracts/token/ERC20/utils/SafeERC20.sol";
+import "https://raw.githubusercontent.com/OpenZeppelin/openzeppelin-contracts/release-v4.4/contracts/access/Ownable.sol";
+import "https://raw.githubusercontent.com/OpenZeppelin/openzeppelin-contracts/release-v4.4/contracts/utils/Strings.sol"; 
+import "https://raw.githubusercontent.com/OpenZeppelin/openzeppelin-contracts/release-v4.4/contracts/proxy/transparent/TransparentUpgradeableProxy.sol";
 
 interface CemeteryNft {
     function safeMint(address to) external returns(uint256);
@@ -31,7 +31,7 @@ contract CemeteryController is Ownable {
     }
 
     function version() external pure returns(uint256){
-        return 1;
+        return 2;
     }
        
     ERC20 public feeToken;
@@ -90,8 +90,7 @@ contract CemeteryController is Ownable {
         return tokenId;
     }
 
-    // Send Gift
-    function sendGift(uint256 tokenId, uint256 typeId, uint256 quantity) external {
+    function sendGiftCore(uint256 tokenId, uint256 typeId, uint256 quantity) private {
         require(tokenId > 0, 'NFT does not exist!');
         require(tokenId <= nft.totalSupply(), 'NFT does not exist!');
         require(getGiftPrice[typeId] > 0, 'Gift does not exist!');
@@ -99,10 +98,28 @@ contract CemeteryController is Ownable {
 
         getGiftCount[tokenId][typeId] += quantity;
         getGiftCountByUser[msg.sender][tokenId][typeId] += quantity;
+    }
+
+    // Send Gift
+    function sendGift(uint256 tokenId, uint256 typeId, uint256 quantity) external {
+        sendGiftCore(tokenId, typeId, quantity);
 
         // Fee
         uint256 totalCost = getGiftPrice[typeId] * quantity;
         feeToken.safeTransferFrom(address(msg.sender), feeTo, totalCost);
+
         emit GiftSent(msg.sender, tokenId, typeId, quantity, totalCost);
+    }
+
+    // Added in Version 2
+    event GiftSentWithMessage(address indexed user, uint256 indexed tokenId, uint256 giftType, uint256 quantity, uint256 totalCost, string message);
+    function sendGiftWithMessage(uint256 tokenId, uint256 typeId, uint256 quantity, string calldata message) external {
+        sendGiftCore(tokenId, typeId, quantity);
+
+        // Fee
+        uint256 totalCost = getGiftPrice[typeId] * quantity;
+        feeToken.safeTransferFrom(address(msg.sender), feeTo, totalCost);
+        
+        emit GiftSentWithMessage(msg.sender, tokenId, typeId, quantity, totalCost, message);
     }
 }
