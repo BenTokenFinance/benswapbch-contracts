@@ -12,29 +12,36 @@ contract BasicNft is ERC721, Ownable {
     // Redefine the name and symbol variables
     string private _name;
     string private _symbol;
-    string private _baseTokenURI;
+    // img url
+    string public baseImgURI;
+    // data url
+    string public baseTokenURI;
     uint256 public maxSupply;
     // constructor() ERC721('MyNFT', 'MNFT') {
     //     admin = msg.sender;
     // }
-    constructor(string memory name_, string memory symbol_, string memory baseURI_,uint256 maxSupply_) ERC721(name_, symbol_) {
+    constructor(string memory name_, string memory symbol_,string memory baseImgURI_,string memory baseURI_,uint256 maxSupply_) ERC721(name_, symbol_) {
         _name = name_;
         _symbol = symbol_;
-        _baseTokenURI = baseURI_;
+        baseImgURI= baseImgURI_;
+        baseTokenURI = baseURI_;
+
         maxSupply=maxSupply_;
         _tokenIdCounter.increment();   // skip 0
     }
-    function setBaseURI(string memory baseURI_) external onlyOwner {
-        _baseTokenURI = baseURI_;
+    function setBaseURI(string memory tokenURI) external onlyOwner {
+        baseTokenURI = tokenURI;
     }
 
     function _baseURI() internal view virtual override returns (string memory) {
-        return _baseTokenURI;
+        return baseImgURI;
     }
 
+
+
     function mint(address to) external onlyOwner {
-        require(nextTokenId < maxSupply, "Max supply reached");
-        uint256 tokenId = _tokenIdCounter.current();
+        uint256 tokenId = _tokenIdCounter.current(); 
+        require(tokenId < maxSupply, "Max supply reached");
         _safeMint(to, tokenId);
         _tokenIdCounter.increment();
     }
@@ -43,7 +50,7 @@ contract BasicNft is ERC721, Ownable {
 
 interface NftTemplate {
     function name() external view returns (string memory);
-    function createNft(address,string memory, string memory, string memory, uint256) external  returns (address);
+    function createNft(address,string memory, string memory, string memory,string memory, uint256) external  returns (address);
     // function createNft(bytes memory) external returns (address);
 }
 
@@ -59,8 +66,8 @@ contract BasicNftTemplate is NftTemplate {
 
   
 
-   function createNft(address create_,string memory name_, string memory symbol_, string memory baseURI_, uint256 maxSupply_) external override returns (address token) {
-        BasicNft newNft = new BasicNft(name_, symbol_, baseURI_, maxSupply_);
+   function createNft(address create_,string memory name_, string memory symbol_,string memory imgUrl_, string memory tokenDataURI_, uint256 maxSupply_) external override returns (address token) {
+        BasicNft newNft = new BasicNft(name_, symbol_,imgUrl_, tokenDataURI_, maxSupply_);
         token=address(newNft);
         require(token != address(0), "Failed to create contract");
         // transferOwner

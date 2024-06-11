@@ -422,18 +422,16 @@ contract NFTFactorySeries {
     }
 
     function createSep20(
-    address _template,
-    address creator,
+    address template_,
     string memory name_, 
     string memory symbol_, 
-    string memory baseURI_, 
+    string memory imgUrl_,
+    string memory tokenDataURI_, 
     uint256 maxSupply_
     ) external returns (address nftAdress) {
-        require(template[_template], 'BenSwap: invalid template');
-        require(creator != address(0), 'BenSwap: invalid creator address');
-
-        nftAdress = NftTemplate(_template).createNft(creator,name_,symbol_,baseURI_,maxSupply_);
-
+        require(template[template_], 'BenSwap: invalid template');
+        require(msg.sender != address(0), 'BenSwap: invalid creator address');
+        nftAdress = NftTemplate(template_).createNft(creator,name_,symbol_,imgUrl_,tokenDataURI_,maxSupply_);
         require(nftAdress != address(0), 'BenSwap: invalid token address');
 
         // creation fee to do
@@ -444,8 +442,6 @@ contract NFTFactorySeries {
         getSep20ByIndex[count] = nftAdress;
         getTemplate[nftAdress] = _template;
         count = count + 1;
-
-
         emit NftCreated(creator, nftAdress);
     }
 
