@@ -8,40 +8,45 @@ import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/v4.0.0/contr
 contract BasicNft is ERC721, Ownable {
     using Counters for Counters.Counter;
     Counters.Counter private _tokenIdCounter;
-
+    bool private _isInitialized;
     // Redefine the name and symbol variables
     string private _name;
     string private _symbol;
-    // img url
-    string public baseImgURI;
-    // data url
-    string public baseTokenURI;
+    // token url
+    string public tokenUrl;
     uint256 public maxSupply;
-    // constructor() ERC721('MyNFT', 'MNFT') {
-    //     admin = msg.sender;
-    // }
-    constructor(string memory name_, string memory symbol_,string memory baseImgURI_,string memory baseURI_,uint256 maxSupply_) ERC721(name_, symbol_) {
+
+    constructor() ERC721("", "") {_isInitialized = false;}
+    function initialize(
+        string memory name_,
+        string memory symbol_,
+        string memory tokenURI_,
+        uint256 maxSupply_
+    ) external onlyOwner {
         _name = name_;
         _symbol = symbol_;
-        baseImgURI= baseImgURI_;
-        baseTokenURI = baseURI_;
-
+        tokenUrl= tokenURI_;
         maxSupply=maxSupply_;
         _tokenIdCounter.increment();   // skip 0
+        _isInitialized = true;
     }
-    function setBaseURI(string memory tokenURI) external onlyOwner {
-        baseTokenURI = tokenURI;
+
+    function name() public view override returns (string memory) {
+        return _name;
+    }
+    function symbol() public view override returns (string memory) {
+        return _symbol;
     }
 
     function _baseURI() internal view virtual override returns (string memory) {
-        return baseImgURI;
+        return tokenUrl;
     }
-
-
-
+    function setTokenUrl(string memory tokenURI_) external onlyOwner {
+        tokenUrl = tokenURI_;
+    }
     function mint(address to) external onlyOwner {
         uint256 tokenId = _tokenIdCounter.current(); 
-        require(tokenId < maxSupply, "Max supply reached");
+        require(tokenId <= maxSupply, "Max supply reached");
         _safeMint(to, tokenId);
         _tokenIdCounter.increment();
     }
@@ -50,7 +55,7 @@ contract BasicNft is ERC721, Ownable {
 
 interface NftTemplate {
     function name() external view returns (string memory);
-    function createNft(address,string memory, string memory, string memory,string memory, uint256) external  returns (address);
+    function createNft(address,bytes memory) external  returns (address);
     // function createNft(bytes memory) external returns (address);
 }
 
@@ -64,23 +69,18 @@ contract BasicNftTemplate is NftTemplate {
         return _name;
     }
 
-  
+    function createNft(address create_,bytes memory callData) external override returns (address token) {
+        bytes memory bytecode = type(BasicNft).creationCode;
+        bytes32 salt = keccak256(abi.encodePacked(callData, msg.sender, _count));
+        assembly {
+            token := create2(0, add(bytecode, 32), mload(bytecode), salt)
+        }
 
-   function createNft(address create_,string memory name_, string memory symbol_,string memory imgUrl_, string memory tokenDataURI_, uint256 maxSupply_) external override returns (address token) {
-        BasicNft newNft = new BasicNft(name_, symbol_,imgUrl_, tokenDataURI_, maxSupply_);
-        token=address(newNft);
-        require(token != address(0), "Failed to create contract");
+        (bool success, ) = token.call(abi.encodePacked(bytes4(keccak256(bytes("initialize(string,string,string,uint256)"))), callData));
+        require(success, "Something is wrong!");
         // transferOwner
+        BasicNft newNft =BasicNft(token);
         newNft.transferOwnership(create_);
         _count = _count + 1;
     }
-    // function createNft(bytes memory callData) external override  returns (address token) {
-    //     bytes memory bytecode = type(BasicNft).creationCode;
-    //     bytes32 salt = keccak256(abi.encodePacked(callData, msg.sender, _count));
-    //     assembly {
-    //         token := create2(0, add(bytecode, 32), mload(bytecode), salt)
-    //     }
-    //     require(token != address(0), "Failed to create contract");
-    //     _count = _count + 1;
-    // }
 }

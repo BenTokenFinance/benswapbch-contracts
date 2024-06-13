@@ -359,8 +359,7 @@ interface IBEP20 {
 
 interface NftTemplate {
     function name() external view returns (string memory);
-    // function createNft(bytes memory callData) external returns (address);
-    function createNft(address,string memory, string memory,string memory, string memory, uint256) external  returns (address);
+    function createNft(address,bytes memory callData) external  returns (address);
 }
 contract NFTFactorySeries {
     using SafeBEP20 for IBEP20;
@@ -372,10 +371,10 @@ contract NFTFactorySeries {
     uint256 public count;
 
     mapping(address => bool) public template;
-    mapping(address => address[]) public getSep20s;
+    mapping(address => address[]) public getNfts;
     mapping(address => address) public getCreator; 
     mapping(address => address) public getTemplate; 
-    mapping(uint256 => address) public getSep20ByIndex;
+    mapping(uint256 => address) public getNftByIndex;
 
     event NftCreated(address indexed creator, address token);
 
@@ -417,52 +416,23 @@ contract NFTFactorySeries {
         template[_t] = false;
     }
 
-    function getSep20Count(address _add) external view returns (uint256) {
-        return getSep20s[_add].length;
+    function getNftCount(address _add) external view returns (uint256) {
+        return getNfts[_add].length;
     }
 
-    function createSep20(
-    address template_,
-    string memory name_, 
-    string memory symbol_, 
-    string memory imgUrl_,
-    string memory tokenDataURI_, 
-    uint256 maxSupply_
-    ) external returns (address nftAdress) {
+    function createNft(address template_,bytes memory callData) external returns (address nftAdress) {
         require(template[template_], 'BenSwap: invalid template');
         require(msg.sender != address(0), 'BenSwap: invalid creator address');
-        nftAdress = NftTemplate(template_).createNft(msg.sender,name_,symbol_,imgUrl_,tokenDataURI_,maxSupply_);
+        nftAdress = NftTemplate(template_).createNft(msg.sender,callData);
         require(nftAdress != address(0), 'BenSwap: invalid token address');
 
         // creation fee to do
         // feeToken.safeTransferFrom(address(msg.sender), feeTo, creationFee);
-
-        getSep20s[msg.sender].push(nftAdress);
+        getNfts[msg.sender].push(nftAdress);
         getCreator[nftAdress] = msg.sender;
-        getSep20ByIndex[count] = nftAdress;
+        getNftByIndex[count] = nftAdress;
         getTemplate[nftAdress] = template_;
         count = count + 1;
         emit NftCreated(msg.sender, nftAdress);
     }
-
-    // function createSep20(address _template, address creator, bytes memory callData) external returns (address nftAdress) {
-    //     require(template[_template], 'BenSwap: invalid template');
-    //     require(creator != address(0), 'BenSwap: invalid creator address');
-
-    //     nftAdress = NftTemplate(_template).createNft(callData);
-
-    //     require(nftAdress != address(0), 'BenSwap: invalid token address');
-
-    //     // creation fee
-    //     feeToken.safeTransferFrom(address(msg.sender), feeTo, creationFee);
-
-    //     getSep20s[creator].push(nftAdress);
-    //     getCreator[nftAdress] = creator;
-    //     getSep20ByIndex[count] = nftAdress;
-    //     getTemplate[nftAdress] = _template;
-    //     count = count + 1;
-
-
-    //     emit NftCreated(creator, nftAdress);
-    // }
 }
