@@ -18,11 +18,14 @@ contract BasicNft is ERC721, Ownable {
 
     constructor() ERC721("", "") {_isInitialized = false;}
     function initialize(
+        address create_,
         string memory name_,
         string memory symbol_,
         string memory tokenURI_,
         uint256 maxSupply_
     ) external onlyOwner {
+        // 设置创建者
+        transferOwnership(create_);
         _name = name_;
         _symbol = symbol_;
         tokenUrl= tokenURI_;
@@ -56,7 +59,6 @@ contract BasicNft is ERC721, Ownable {
 interface NftTemplate {
     function name() external view returns (string memory);
     function createNft(address,bytes memory) external  returns (address);
-    // function createNft(bytes memory) external returns (address);
 }
 
 pragma solidity ^0.8.4;
@@ -75,12 +77,15 @@ contract BasicNftTemplate is NftTemplate {
         assembly {
             token := create2(0, add(bytecode, 32), mload(bytecode), salt)
         }
-
-        (bool success, ) = token.call(abi.encodePacked(bytes4(keccak256(bytes("initialize(string,string,string,uint256)"))), callData));
+        (string memory name_, string memory symbol_,string memory tokenURI_,uint256 maxSupply_) = abi.decode(callData, (string,string,string,uint256));
+        // 使用 abi.encodeWithSelector 正确编码参数
+        bytes memory initializeCallData = abi.encodeWithSelector(
+            bytes4(keccak256("initialize(address,string,string,string,uint256)")),
+            create_,name_,symbol_,tokenURI_,maxSupply_
+        );
+        (bool success, ) = token.call(initializeCallData);
         require(success, "Something is wrong!");
-        // transferOwner
-        BasicNft newNft =BasicNft(token);
-        newNft.transferOwnership(create_);
+
         _count = _count + 1;
     }
 }

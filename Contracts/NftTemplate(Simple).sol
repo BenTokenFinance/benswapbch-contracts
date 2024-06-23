@@ -13,9 +13,6 @@ contract SimpleNft is ERC721, Ownable {
     // Redefine the name and symbol variables
     string private _name;
     string private _symbol;
-    // token url
-    string private _uri;
-
     uint256 public maxSupply;
     address public templteAdress;
   
@@ -35,15 +32,16 @@ contract SimpleNft is ERC721, Ownable {
 
     constructor() ERC721("", "") {_isInitialized = false;}
     function initialize(
+        address create_,
         string memory name_,
         string memory symbol_,
-        string memory tokenURI_,
         uint256 maxSupply_,
         address templteAdress_
     ) external onlyOwner {
+        // 设置创建者
+        transferOwnership(create_);
         _name = name_;
         _symbol = symbol_;
-        _uri= tokenURI_;
         maxSupply=maxSupply_;
         templteAdress=templteAdress_;
         _tokenIdCounter.increment();   // skip 0
@@ -56,14 +54,6 @@ contract SimpleNft is ERC721, Ownable {
     }
     function symbol() public view override returns (string memory) {
         return _symbol;
-    }
-
-    function _baseURI() internal view override returns (string memory) {
-        return _uri;
-    }
-
-    function setURI(string memory newuri) external onlyOwner {
-        _uri = newuri;
     }
 
     function safeMint(string memory na, string memory desc, string memory img, string memory extUrl, string memory attrs) external onlyOwner returns(uint256) {
@@ -79,12 +69,6 @@ contract SimpleNft is ERC721, Ownable {
         return tokenId;
     }
 
-    //get Img Url
-    function tokenImgURI(uint256 tokenId) public view returns (string memory) {
-        string memory baseURI = _baseURI();
-        return bytes(baseURI).length > 0 ? string.concat(baseURI, tokenId.toString()) : "";
-    }
-
     function tokenURI(uint256 tokenId) public view virtual override returns (string memory) {
         require(_exists(tokenId), "ERC721Metadata: URI query for nonexistent token");
         string  memory newUrl=compositeURI();
@@ -93,8 +77,8 @@ contract SimpleNft is ERC721, Ownable {
     }
 
     function compositeURI() internal view returns (string memory) {
-        NftTemplate simpleNftTemplate = NftTemplate(templteAdress);
-        string memory mainUrl=simpleNftTemplate.mainUrl();
+        SimpleNftTemplate simpleTemplate = SimpleNftTemplate(templteAdress);
+        string memory mainUrl=simpleTemplate.mainUrl();
         return string(abi.encodePacked(mainUrl,addressToString(address(this))));
     }
     // 将地址转换为字符串的辅助函数
@@ -115,8 +99,6 @@ contract SimpleNft is ERC721, Ownable {
 
 
 interface NftTemplate {
-    function mainUrl() external view returns (string memory);
-    function setMainUrl(string memory) external;
     function name() external view returns (string memory);
     function createNft(address,bytes memory) external  returns (address);
 }
@@ -124,9 +106,9 @@ interface NftTemplate {
 pragma solidity ^0.8.4;
 contract SimpleNftTemplate is NftTemplate {
     address owner;
-    string override public  mainUrl="http://test.com/";
+    string  public  mainUrl="http://test.com/";
     uint256 private _count = 0;
-    string private _name = "Simple";
+    string  private _name = "Simple";
 
     constructor(){
         owner=msg.sender;
@@ -135,7 +117,7 @@ contract SimpleNftTemplate is NftTemplate {
         return _name;
     }
 
-    function setMainUrl(string memory newUrl_) external override{
+    function setMainUrl(string memory newUrl_) external{
         require(msg.sender == owner, "Unauthorized");
         mainUrl=newUrl_;
     }
@@ -143,26 +125,20 @@ contract SimpleNftTemplate is NftTemplate {
 
     
     function createNft(address create_,bytes memory callData) external override returns (address token) {
-        // eg:calldata 
         bytes memory bytecode = type(SimpleNft).creationCode;
         bytes32 salt = keccak256(abi.encodePacked(callData, msg.sender, _count));
         assembly {
             token := create2(0, add(bytecode, 32), mload(bytecode), salt)
         }
-        // 假设 callData 包含除 address(this) 以外的所有参数
-        (string memory name_, string memory symbol_, string memory baseTokenURI_, uint256 maxSupply_) = abi.decode(callData, (string, string, string, uint256));
+        // 解构
+        (string memory name_, string memory symbol_, uint256 maxSupply_) = abi.decode(callData, (string, string, uint256));
         // 使用 abi.encodeWithSelector 正确编码参数
         bytes memory initializeCallData = abi.encodeWithSelector(
-            bytes4(keccak256("initialize(string,string,string,uint256,address)")),
-            name_, symbol_, baseTokenURI_, maxSupply_, address(this)
+            bytes4(keccak256("initialize(address,string,string,uint256,address)")),
+            create_,name_, symbol_, maxSupply_, address(this)
         );
-
         (bool success, ) = token.call(initializeCallData);
-
         require(success, "Something is wrong!");
-        // transferOwner
-        SimpleNft newNft = SimpleNft(token);
-        newNft.transferOwnership(create_);
         _count = _count + 1;
     }
 }
