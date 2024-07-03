@@ -24,7 +24,8 @@ contract BasicNft is ERC721, Ownable {
         string memory tokenURI_,
         uint256 maxSupply_
     ) external onlyOwner {
-        // 设置创建者
+        require(!_isInitialized, 'NFT: not initialized!');
+        // set owner
         transferOwnership(create_);
         _name = name_;
         _symbol = symbol_;
@@ -78,7 +79,6 @@ contract BasicNftTemplate is NftTemplate {
             token := create2(0, add(bytecode, 32), mload(bytecode), salt)
         }
         (string memory name_, string memory symbol_,string memory tokenURI_,uint256 maxSupply_) = abi.decode(callData, (string,string,string,uint256));
-        // 使用 abi.encodeWithSelector 正确编码参数
         bytes memory initializeCallData = abi.encodeWithSelector(
             bytes4(keccak256("initialize(address,string,string,string,uint256)")),
             create_,name_,symbol_,tokenURI_,maxSupply_

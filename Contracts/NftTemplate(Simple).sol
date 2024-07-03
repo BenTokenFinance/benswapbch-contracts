@@ -1,15 +1,18 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.4;
 import "@openzeppelin/contracts/utils/Counters.sol";
+
 import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/v4.0.0/contracts/token/ERC721/ERC721.sol";
 import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/v4.0.0/contracts/access/Ownable.sol";
 import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/v4.0.0/contracts/utils/Strings.sol";
+
 
 contract SimpleNft is ERC721, Ownable {
     using Strings for uint256;
     using Counters for Counters.Counter;
     Counters.Counter private _tokenIdCounter;
     bool private _isInitialized;
+    bool private _isEdit;
     // Redefine the name and symbol variables
     string private _name;
     string private _symbol;
@@ -36,14 +39,17 @@ contract SimpleNft is ERC721, Ownable {
         string memory name_,
         string memory symbol_,
         uint256 maxSupply_,
-        address templteAdress_
+        address templteAdress_,
+        bool isEdit_
     ) external onlyOwner {
-        // 设置创建者
+        require(!_isInitialized, 'NFT: not initialized!');
+        // set owner
         transferOwnership(create_);
         _name = name_;
         _symbol = symbol_;
         maxSupply=maxSupply_;
         templteAdress=templteAdress_;
+        _isEdit=isEdit_;
         _tokenIdCounter.increment();   // skip 0
         _isInitialized = true;
     }
@@ -68,7 +74,7 @@ contract SimpleNft is ERC721, Ownable {
         emit NftMinted(msg.sender, tokenId, na, desc, img, extUrl, attrs);
         return tokenId;
     }
-
+    
     function tokenURI(uint256 tokenId) public view virtual override returns (string memory) {
         require(_exists(tokenId), "ERC721Metadata: URI query for nonexistent token");
         string  memory newUrl=compositeURI();
@@ -81,7 +87,7 @@ contract SimpleNft is ERC721, Ownable {
         string memory mainUrl=simpleTemplate.mainUrl();
         return string(abi.encodePacked(mainUrl,addressToString(address(this))));
     }
-    // 将地址转换为字符串的辅助函数
+    // The helper function to convert an address to a string
     function addressToString(address _addr) internal pure returns (string memory) {
         bytes32 value = bytes32(uint256(uint160(_addr)));
         bytes memory alphabet = "0123456789abcdef";
@@ -94,6 +100,19 @@ contract SimpleNft is ERC721, Ownable {
             str[3 + i * 2] = alphabet[uint8(value[i + 12] & 0x0f)];
         }
         return string(str);
+    }
+
+    function updateNftInfo(
+        uint256 tokenId,
+        string memory na, 
+        string memory desc, 
+        string memory img, 
+        string memory extUrl, 
+        string memory attrs
+    ) external  onlyOwner{
+       require(_exists(tokenId), "ERC721Metadata: URI query for nonexistent token");
+       require(_isEdit,"NFT:Cannot edit");
+       getNftInfo[tokenId] = NftInfo(na, desc, img, extUrl, attrs);
     }
 }
 
@@ -130,12 +149,10 @@ contract SimpleNftTemplate is NftTemplate {
         assembly {
             token := create2(0, add(bytecode, 32), mload(bytecode), salt)
         }
-        // 解构
-        (string memory name_, string memory symbol_, uint256 maxSupply_) = abi.decode(callData, (string, string, uint256));
-        // 使用 abi.encodeWithSelector 正确编码参数
+        (string memory name_, string memory symbol_, uint256 maxSupply_,bool isEdit_) = abi.decode(callData, (string, string, uint256,bool));
         bytes memory initializeCallData = abi.encodeWithSelector(
-            bytes4(keccak256("initialize(address,string,string,uint256,address)")),
-            create_,name_, symbol_, maxSupply_, address(this)
+            bytes4(keccak256("initialize(address,string,string,uint256,address,bool)")),
+            create_,name_, symbol_, maxSupply_, address(this),isEdit_
         );
         (bool success, ) = token.call(initializeCallData);
         require(success, "Something is wrong!");
