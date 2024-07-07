@@ -427,7 +427,7 @@ contract NFTFactorySeries {
         require(nftAdress != address(0), 'BenSwap: invalid token address');
 
         // creation fee to do
-        // feeToken.safeTransferFrom(address(msg.sender), feeTo, creationFee);
+        feeToken.safeTransferFrom(address(msg.sender), feeTo, creationFee);
         getNfts[msg.sender].push(nftAdress);
         getCreator[nftAdress] = msg.sender;
         getNftByIndex[count] = nftAdress;

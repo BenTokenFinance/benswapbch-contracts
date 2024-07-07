@@ -27,9 +27,8 @@ contract SimpleNft is ERC721, Ownable {
         string attributes;
     }
     mapping(uint256 => NftInfo) public getNftInfo;
-    mapping(uint256 => address) public getCreator;
     event NftMinted(address indexed user, uint256 indexed tokenId, string name, string description, string image, string externalUrl, string attributes);
-
+    event NftInfoUpdated(address indexed updater,uint256 indexed tokenId,string name,string description,string image,string externalUrl,string attributes);
 
 
 
@@ -62,13 +61,12 @@ contract SimpleNft is ERC721, Ownable {
         return _symbol;
     }
 
-    function safeMint(string memory na, string memory desc, string memory img, string memory extUrl, string memory attrs) external onlyOwner returns(uint256) {
+    function safeMint(address to,string memory na, string memory desc, string memory img, string memory extUrl, string memory attrs) external onlyOwner returns(uint256) {
         uint256 tokenId = _tokenIdCounter.current();
         require(tokenId <= maxSupply, "Max supply reached");
 
-        getCreator[tokenId] = msg.sender;
         getNftInfo[tokenId] = NftInfo({ name: na, description: desc, image: img, externalUrl: extUrl, attributes: attrs });
-        _safeMint(msg.sender, tokenId);
+        _safeMint(to, tokenId);
         _tokenIdCounter.increment();  
               
         emit NftMinted(msg.sender, tokenId, na, desc, img, extUrl, attrs);
@@ -82,13 +80,13 @@ contract SimpleNft is ERC721, Ownable {
         return bytes(newUrl).length > 0 ? url : "";
     }
 
-    function compositeURI() internal view returns (string memory) {
+    function compositeURI() private view returns (string memory) {
         SimpleNftTemplate simpleTemplate = SimpleNftTemplate(templteAdress);
         string memory mainUrl=simpleTemplate.mainUrl();
         return string(abi.encodePacked(mainUrl,addressToString(address(this))));
     }
     // The helper function to convert an address to a string
-    function addressToString(address _addr) internal pure returns (string memory) {
+    function addressToString(address _addr) private pure returns (string memory) {
         bytes32 value = bytes32(uint256(uint160(_addr)));
         bytes memory alphabet = "0123456789abcdef";
 
@@ -113,6 +111,7 @@ contract SimpleNft is ERC721, Ownable {
        require(_exists(tokenId), "ERC721Metadata: URI query for nonexistent token");
        require(_isEdit,"NFT:Cannot edit");
        getNftInfo[tokenId] = NftInfo(na, desc, img, extUrl, attrs);
+       emit NftInfoUpdated(msg.sender,tokenId, na, desc, img, extUrl, attrs);
     }
 }
 
@@ -149,6 +148,8 @@ contract SimpleNftTemplate is NftTemplate {
         assembly {
             token := create2(0, add(bytecode, 32), mload(bytecode), salt)
         }
+        require(token != address(0), "Deployment failed!");
+        
         (string memory name_, string memory symbol_, uint256 maxSupply_,bool isEdit_) = abi.decode(callData, (string, string, uint256,bool));
         bytes memory initializeCallData = abi.encodeWithSelector(
             bytes4(keccak256("initialize(address,string,string,uint256,address,bool)")),

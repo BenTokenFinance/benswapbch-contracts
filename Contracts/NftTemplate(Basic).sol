@@ -78,6 +78,8 @@ contract BasicNftTemplate is NftTemplate {
         assembly {
             token := create2(0, add(bytecode, 32), mload(bytecode), salt)
         }
+        require(token != address(0), "Deployment failed!");
+        
         (string memory name_, string memory symbol_,string memory tokenURI_,uint256 maxSupply_) = abi.decode(callData, (string,string,string,uint256));
         bytes memory initializeCallData = abi.encodeWithSelector(
             bytes4(keccak256("initialize(address,string,string,string,uint256)")),
