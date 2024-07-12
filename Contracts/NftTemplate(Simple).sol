@@ -12,7 +12,7 @@ contract SimpleNft is ERC721, Ownable {
     using Counters for Counters.Counter;
     Counters.Counter private _tokenIdCounter;
     bool private _isInitialized;
-    bool private _isEdit;
+    bool public  isEdit;
     // Redefine the name and symbol variables
     string private _name;
     string private _symbol;
@@ -48,7 +48,7 @@ contract SimpleNft is ERC721, Ownable {
         _symbol = symbol_;
         maxSupply=maxSupply_;
         templteAdress=templteAdress_;
-        _isEdit=isEdit_;
+        isEdit=isEdit_;
         _tokenIdCounter.increment();   // skip 0
         _isInitialized = true;
     }
@@ -109,7 +109,7 @@ contract SimpleNft is ERC721, Ownable {
         string memory attrs
     ) external  onlyOwner{
        require(_exists(tokenId), "ERC721Metadata: URI query for nonexistent token");
-       require(_isEdit,"NFT:Cannot edit");
+       require(isEdit,"NFT:Cannot edit");
        getNftInfo[tokenId] = NftInfo(na, desc, img, extUrl, attrs);
        emit NftInfoUpdated(msg.sender,tokenId, na, desc, img, extUrl, attrs);
     }
