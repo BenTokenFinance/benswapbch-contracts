@@ -141,7 +141,7 @@ interface NftTemplate {
 
 pragma solidity ^0.8.4;
 contract SimpleNftTemplate is NftTemplate {
-    address owner;
+    address public  owner;
     string  public  mainUrl="http://test.com/";
     uint256 private _count = 0;
     string  private _name = "Simple";
