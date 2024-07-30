@@ -14,7 +14,7 @@ contract BasicNft is ERC721,Ownable,ERC721Enumerable  {
     string private _name;
     string private _symbol;
     // token url
-    string public tokenUrl;
+    string public tokenURL;
     string public suffix;
     uint256 public maxSupply;
 
@@ -33,8 +33,8 @@ contract BasicNft is ERC721,Ownable,ERC721Enumerable  {
         transferOwnership(create_);
         _name = name_;
         _symbol = symbol_;
-        // set token Url
-        tokenUrl= prefix_;
+        // set token URL
+        tokenURL= prefix_;
         suffix=suffix_;
 
         maxSupply=maxSupply_;
@@ -50,7 +50,7 @@ contract BasicNft is ERC721,Ownable,ERC721Enumerable  {
     }
 
     function _baseURI() internal view virtual override returns (string memory) {
-        return tokenUrl;
+        return tokenURL;
     }
 
     function mint(address to) external onlyOwner {
@@ -60,8 +60,8 @@ contract BasicNft is ERC721,Ownable,ERC721Enumerable  {
         _tokenIdCounter.increment();
     }
 
-    function setTokenUrl(string memory prefix_,string memory suffix_) external onlyOwner {
-        tokenUrl = prefix_;
+    function setTokenURL(string memory prefix_,string memory suffix_) external onlyOwner {
+        tokenURL = prefix_;
         suffix=suffix_;
     }
     /**
