@@ -142,7 +142,7 @@ interface NftTemplate {
 pragma solidity ^0.8.4;
 contract SimpleNftTemplate is NftTemplate {
     address public  owner;
-    string  public  mainUrl="http://test.com/";
+    string  public  mainUrl="https://api.benswap.cash/api/nft/factory_simple/";
     uint256 private _count = 0;
     string  private _name = "Simple";
 
