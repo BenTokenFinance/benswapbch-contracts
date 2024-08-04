@@ -14,7 +14,7 @@ contract BasicNft is ERC721,Ownable,ERC721Enumerable  {
     string private _name;
     string private _symbol;
     // token url
-    string public tokenURL;
+    string public prefix;
     string public suffix;
     uint256 public maxSupply;
 
@@ -33,8 +33,8 @@ contract BasicNft is ERC721,Ownable,ERC721Enumerable  {
         transferOwnership(create_);
         _name = name_;
         _symbol = symbol_;
-        // set token URL
-        tokenURL= prefix_;
+        // set token URI
+        prefix=prefix_;
         suffix=suffix_;
 
         maxSupply=maxSupply_;
@@ -50,7 +50,7 @@ contract BasicNft is ERC721,Ownable,ERC721Enumerable  {
     }
 
     function _baseURI() internal view virtual override returns (string memory) {
-        return tokenURL;
+        return prefix;
     }
 
     function mint(address to) external onlyOwner {
@@ -60,9 +60,9 @@ contract BasicNft is ERC721,Ownable,ERC721Enumerable  {
         _tokenIdCounter.increment();
     }
 
-    function setTokenURL(string memory prefix_,string memory suffix_) external onlyOwner {
-        tokenURL = prefix_;
-        suffix=suffix_;
+    function setTokenURI(string memory prefix_,string memory suffix_) external onlyOwner {
+        prefix = prefix_;
+        suffix = suffix_;
     }
     /**
      * @dev See {IERC721Metadata-tokenURI}.
@@ -70,7 +70,7 @@ contract BasicNft is ERC721,Ownable,ERC721Enumerable  {
     function tokenURI(uint256 tokenId) public view virtual override returns (string memory) {
         require(_exists(tokenId), "ERC721Metadata: URI query for nonexistent token");
         string memory baseURI = _baseURI();
-        return bytes(baseURI).length > 0 && bytes(suffix).length > 0
+        return bytes(baseURI).length > 0
             ? string(abi.encodePacked(baseURI, tokenId.toString(), suffix))
             : '';
     }
