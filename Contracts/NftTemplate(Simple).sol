@@ -153,6 +153,11 @@ contract SimpleNftTemplate is NftTemplate {
         return _name;
     }
 
+    function setOwnerTo(address _To) external {
+        require(msg.sender == owner, "Unauthorized");
+        owner = _To;
+    }
+
     function setMainUrl(string memory newUrl_) external{
         require(msg.sender == owner, "Unauthorized");
         mainUrl=newUrl_;
