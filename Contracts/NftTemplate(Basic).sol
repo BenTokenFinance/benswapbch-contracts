@@ -53,11 +53,21 @@ contract BasicNft is ERC721,Ownable,ERC721Enumerable  {
         return prefix;
     }
 
-    function mint(address to) external onlyOwner {
-        uint256 tokenId = _tokenIdCounter.current(); 
-        require(tokenId <= maxSupply, "Max supply reached");
+    function _mintTo(address to) internal {
+        uint256 tokenId = _tokenIdCounter.current();
+        require(tokenId < maxSupply, "Max supply reached");
         _safeMint(to, tokenId);
         _tokenIdCounter.increment();
+    }
+
+    function mint(address to) external onlyOwner {
+        _mintTo(to);
+    }
+
+    function batchMint(address to, uint256 number) external onlyOwner {
+        for (uint256 i = 0; i < number; i++) {
+            _mintTo(to);
+        }
     }
 
     function setTokenURI(string memory prefix_,string memory suffix_) external onlyOwner {
