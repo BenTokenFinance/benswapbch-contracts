@@ -54,8 +54,8 @@ contract BasicNft is ERC721,Ownable,ERC721Enumerable  {
     }
 
     function _mintTo(address to) internal {
-        uint256 tokenId = _tokenIdCounter.current();
-        require(tokenId < maxSupply, "Max supply reached");
+        uint256 tokenId = _tokenIdCounter.current(); 
+        require(tokenId <= maxSupply, "Max supply reached");
         _safeMint(to, tokenId);
         _tokenIdCounter.increment();
     }
