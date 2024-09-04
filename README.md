@@ -66,7 +66,10 @@
 (UpdatableErc721WithLimitSupply02): v0.8.4+commit.c7e474f2 <br/>
 (UpdatableErc721WithUnlimitedSuppy01): v0.8.17+commit.8df45f5f <br/>
 (FarmVoting): v0.8.4+commit.c7e474f2 <br/>
-(NFTFactorySingle): v0.8.7+commit.c7e474f2 <br/>
+(NFT Factory: Single): v0.8.7+commit.c7e474f2 <br/>
+(NFT Factory: Series): v0.8.12+commit.f00d7308 <br/>
+(NFT Factory Template - Basic): v0.8.12+commit.f00d7308 <br/>
+(NFT Factory Template - Simple): v0.8.12+commit.f00d7308 <br/>
 (TokenBurnerV1): v0.8.18+commit.87f61d96 <br/>
 (EBENGovernanceUpgradable): v0.8.18+commit.87f61d96 <br/>
 (CharitiesUpgradable): v0.8.18+commit.87f61d96 <br/>
@@ -190,7 +193,10 @@ PokéBenHeroBeautician {Proxy}: 0x108d5B2Eae269eBeB83a02a77E3da67CB7CD684d <br/>
 PokéBenHeroBeautician {Imp - Version 1}: 0x04cBD8Ab66713F860bc0dcE9203aB5D731D3Da30 <br/>
 FarmVoting: 0xc0E541a34B0E1c6fFf51b1780DE899873B6C81f7 <br/>
 Ben Token Finance 2022 Christmas Souvenirs (UpdatableErc721WithLimitSupply02): 0xA76F56fCDA929FfFAf5710AFebe5403B5b3018Bd <br/>
-Miscellaneous (NFTFactorySingle): 0xF8E0755544ED3133182085773213727Eb05258bd <br/>
+Miscellaneous (NFT Factory: Single): 0xF8E0755544ED3133182085773213727Eb05258bd <br/>
+NFT Factory Series: 0x548830A21FF24E8B90415e71F268957535f54B8e <br/>
+NFT Factory Template - Basic: 0x1A9C7d74F2aac2E4026f951d7C7ccEf83Eb1F9aE <br/>
+NFT Factory Template - Simple: 0x9e18f36ADA68e95250d54de79dC4BD86751290b3 <br/>
 BenSwap Tutorial (UpdatableErc721WithUnlimitedSuppy01): 0xC7937210F05Da6b0185d67c2D438256DF15305a3 <br/>
 BenSwap Tweet (UpdatableErc721WithUnlimitedSuppy01): 0x9F8211193b71BF602417f482c0C37Cfdf3755991 <br/>
 TokenBurnerV1: 0x71D9C349e35f73B782022d912B5dADa4235fDa06 <br/>
