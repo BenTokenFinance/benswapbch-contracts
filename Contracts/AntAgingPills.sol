@@ -56,10 +56,12 @@ contract AntAgingPills is Initializable,Ownable{
 
     function getReleasedTokens(uint256 tokenId) view public  returns(uint256 releasedTokens) {
            require(lockInfoById[tokenId].exists,"The tokenId does not exist");
-           require(block.timestamp>lockInfoById[tokenId].startTime,"The token is not released");
+           //   require(block.timestamp>lockInfoById[tokenId].startTime,"The token is not released");
+           if(block.timestamp<=lockInfoById[tokenId].startTime){
+              return 0;
+           }
            uint256 elapsedTime = block.timestamp - lockInfoById[tokenId].startTime; // 已过时间
            uint256 totalReleaseTime=lockInfoById[tokenId].endTime-lockInfoById[tokenId].startTime;// 总释放时间
-
            if (elapsedTime >= totalReleaseTime) {
                return lockInfoById[tokenId].lockedAmount;
            }
