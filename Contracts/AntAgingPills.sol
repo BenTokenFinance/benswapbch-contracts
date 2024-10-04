@@ -7,12 +7,12 @@ import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/v4.6.0/contr
 import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/v4.6.0/contracts/proxy/utils/Initializable.sol";
 import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/v4.6.0/contracts/token/ERC721/ERC721.sol";
 import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/v4.6.0/contracts/token/ERC721/extensions/ERC721Enumerable.sol";
+import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/v4.6.0/contracts/proxy/transparent/TransparentUpgradeableProxy.sol";
 import "https://raw.githubusercontent.com/abdk-consulting/abdk-libraries-solidity/master/ABDKMathQuad.sol";
 
 
 interface BasicNft is IERC721,IERC721Enumerable {
     function mint(address to) external;
-    function batchMint(address to,uint256  number) external;
     function setTokenURL(string memory prefix_,string memory suffix_) external;
 }
 contract AntAgingPills is Initializable,Ownable{
@@ -31,9 +31,10 @@ contract AntAgingPills is Initializable,Ownable{
     event lockAntAgingCreated(uint256 tokenId,address to,uint256 startTime,uint256 endTime,uint256 exponent,uint256 tokenAmount);
     event lockAntAgingWithdrawal(uint256 tokenId,address user,uint256 withdrawnAmount,uint256 releasedTokens);
     
-    function initialize(address nftAddress_,address feeToken_) public initializer {
-        feeToken=feeToken_;
-        nftAddress=nftAddress_;
+    function initialize(address newOwner, address nftAddress_,address feeToken_) public initializer {
+      _transferOwnership(newOwner);
+      feeToken=feeToken_;
+      nftAddress=nftAddress_;
     }
     
     /*
