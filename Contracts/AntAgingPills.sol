@@ -24,11 +24,12 @@ contract AntAgingPills is Initializable,Ownable{
        uint256 exponent;
        uint256 withdrawnAmount;
        bool exists;
+       address creator;
     }
     address public  feeToken;
     address public  nftAddress;
     mapping (uint256=>lockedInfo) public lockInfoById;
-    event lockAntAgingCreated(uint256 tokenId,address to,uint256 startTime,uint256 endTime,uint256 exponent,uint256 tokenAmount);
+    event lockAntAgingCreated(uint256 tokenId,address to,uint256 startTime,uint256 endTime,uint256 exponent,uint256 tokenAmount,address creator);
     event lockAntAgingWithdrawal(uint256 tokenId,address user,uint256 withdrawnAmount,uint256 releasedTokens);
     
     function initialize(address newOwner, address nftAddress_,address feeToken_) public initializer {
@@ -50,8 +51,8 @@ contract AntAgingPills is Initializable,Ownable{
        BasicNft nftContract=BasicNft(nftAddress);
        nftContract.mint(to);
        uint256 tokenId=nftContract.totalSupply();
-       lockInfoById[tokenId]=lockedInfo(tokenAmount,startTime,endTime,exponent,0,true);
-       emit lockAntAgingCreated(tokenId,to,startTime,endTime,exponent,tokenAmount);
+       lockInfoById[tokenId]=lockedInfo(tokenAmount,startTime,endTime,exponent,0,true,msg.sender);
+       emit lockAntAgingCreated(tokenId,to,startTime,endTime,exponent,tokenAmount,msg.sender);
     }
     
 
