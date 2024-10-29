@@ -442,17 +442,6 @@ contract BenLockV2 {
     }
 
 
-    // function withdraw() public {
-    //     require(owner == msg.sender, 'caller must be the owner!');
-    //     require(endTime <= block.timestamp, 'not unlocked!');
-
-    //     uint256 _balance = token.balanceOf(address(this));
-    //     token.safeTransfer(address(msg.sender), _balance);
-
-    //     isWithdrawn = true;
-    //     emit Withdraw(owner, _balance);
-    // }
-
     function withdrawReleasedTokens() external {
       require(owner == msg.sender, 'caller must be the owner!');
 
@@ -649,7 +638,7 @@ contract BenLockV2Factory {
     function transferOwnership(address benLock, address newOwner) external {
         require(getCreator[benLock] != address(0), 'BenSwap: invalid benlock address');
 
-        BenLock lock = BenLock(benLock);
+        BenLockV2 lock = BenLockV2(benLock);
 
         require(lock.owner() == msg.sender, 'BenSwap: not owner!');
         lock.setOwnerTo(newOwner);
