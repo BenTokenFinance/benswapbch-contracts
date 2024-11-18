@@ -37,6 +37,10 @@ contract AntAgingPills is Initializable,Ownable{
       feeToken=feeToken_;
       nftAddress=nftAddress_;
     }
+
+   function version() external pure returns(uint256){
+        return 1;
+    }
     
     /*
      exponent eg:0.25*100=25
