@@ -15,7 +15,7 @@ interface BasicNft is IERC721,IERC721Enumerable {
     function mint(address to) external;
     function setTokenURL(string memory prefix_,string memory suffix_) external;
 }
-contract AntAgingPills is Initializable,Ownable{
+contract AntAgingPotionController is Initializable,Ownable{
     using ABDKMathQuad for bytes16;
     struct lockedInfo{
        uint256 lockedAmount;

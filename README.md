@@ -77,7 +77,7 @@
 (CemeteryNft): v0.8.18+commit.87f61d96 <br/>
 (CemeteryController): v0.8.18+commit.87f61d96 <br/>
 (BlindBoxes): v0.8.12+commit.f00d7308 <br/>
-(AntiAgingPotion): v0.8.12+commit.f00d7308 <br/>
+(AntiAgingPotionController): v0.8.12+commit.f00d7308 <br/>
 <br/>
 <h3>Deployed Contracts on smartBCH Mainnet:</h3>
 WBCH: 0x3743eC0673453E5009310C727Ba4eaF7b3a1cc04 <br/>
@@ -210,8 +210,8 @@ CemeteryController {Proxy}: 0x01cE3fc62d76C30B5Db96C2d70354B84df29df5E<br/>
 CemeteryController {Imp - Version 1}: 0x42F4A2c72b9Ed5e620E8DcA04e4f3bB433DD84e0<br/>
 CemeteryController {Imp - Version 2}: 0xca6d7cea931F7a610794B5b968d9623EA441C566<br/>
 Three Kingdoms 1 (Blind Boxes): 0x85E6969277173D8d486d05dA707f99EdCbC4FFFD<br/>
-AntiAgingPotion {Proxy}: 0x5d370da787802c878b3ddDb38838a0Cab52cE60C<br/>
-AntiAgingPotion {Imp - Version 1}: 0xfE0106b9a97ffFAdeaD7Dcd65EAdD94Cb4948aEe<br/>
+AntiAgingPotionController {Proxy}: 0x5d370da787802c878b3ddDb38838a0Cab52cE60C<br/>
+AntiAgingPotionController {Imp - Version 1}: 0xfE0106b9a97ffFAdeaD7Dcd65EAdD94Cb4948aEe<br/>
 <br/>
 <h3>Deployed Contracts on smartBCH Amber Testnet:</h3>
 LP Factory: 0x769e1fdbA5d0e397F34fD9d9B49F3d83F543DD02<br/>
